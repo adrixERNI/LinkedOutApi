@@ -1,0 +1,6 @@
+@LinkedOutApi_HostAddress = http://localhost:5239
+
+GET {{LinkedOutApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

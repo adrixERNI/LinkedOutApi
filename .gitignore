@@ -1,0 +1,44 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# ASP.NET Core secrets
+**/secrets.json
+
+# dotnet CLI
+.project.lock.json
+project.lock.json
+
+# NPM & Node (if you use frontend in project)
+node_modules/
+npm-debug.log
+
+# Environment files
+.env
+.env.*
+
+# Publish directory
+publish/
+out/
+
+# Azure deployment
+.scm/
