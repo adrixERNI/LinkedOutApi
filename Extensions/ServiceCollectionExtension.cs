@@ -11,6 +11,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IAwsService, AwsService>();
         services.AddScoped<IImageService, ImageService>();
+        services.AddScoped<IJwtService, JwtService>();
 
         return services;
     }

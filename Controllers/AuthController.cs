@@ -1,5 +1,6 @@
 using LinkedOutApi.DTOs.Auth;
 using LinkedOutApi.Interfaces;
+using LinkedOutApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -11,40 +12,53 @@ public class AuthController : ControllerBase
     private readonly IAwsService _awsService;
     private readonly IAuthService _authService;
     private readonly IImageService _imageService;
+    private readonly IJwtService _jwtService;
 
 
-    public AuthController(IHttpClientFactory httpClientFactory, IWebHostEnvironment env, IAwsService awsService, IAuthService authService, IImageService imageService)
+    public AuthController(
+        IHttpClientFactory httpClientFactory,
+        IWebHostEnvironment env,
+        IAwsService awsService,
+        IAuthService authService,
+        IImageService imageService,
+        IJwtService jwtService)
     {
         _httpClientFactory = httpClientFactory;
         _env = env;
         _awsService = awsService;
         _authService = authService;
         _imageService = imageService;
+        _jwtService = jwtService;
     }
 
     [HttpPost("google/trainee")]
-    public async Task<IActionResult> GoogleSignIn([FromBody] GoogleSignInRequestDTO request)
+    public async Task<ActionResult<GoogleSignInResponseDTO>> GoogleSignIn([FromBody] GoogleSignInRequestDTO request)
     {
         try
         {
 
             var userInfo = await _authService.AuthenticateWithGoogleAsync(request.Code);
-
             var existingUser = await _authService.GetUserByEmailAsync(userInfo.Email);
 
-            if (existingUser != null)
+            if (existingUser == null)
             {
-                return Ok(new { message = "Were done" });
+                var imageStream = await _imageService.DownloadImageAsync(userInfo.Picture);
+                var storedUser = await _authService.CreateUserAsync(userInfo.Name, userInfo.Email, "trainee");
+                var fileKey = $"profile-pictures/{storedUser!.Id}.jpg";
+                var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
             }
 
-            var imageStream = await _imageService.DownloadImageAsync(userInfo.Picture);
+            var accessToken = await _jwtService.GenerateTokenAsync("1", UserRole.Trainee);
 
-            var storedUser = await _authService.CreateUserAsync(userInfo.Name, userInfo.Email, "trainee");
+            Response.Cookies.Append("access_token", accessToken, new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Lax,
+                Expires = DateTime.Now.AddMinutes(30)
+            });
 
-            var fileKey = $"profile-pictures/{storedUser!.Id}.jpg"; // File name should be userId or atleast uniquely bind to user
-            var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
-
-            return Ok(new { userInfo.Name, userInfo.Email, PictureUrl = pictureUrl });
+            return Ok(new { message = "Login successfully" });
         }
         catch (Exception ex)
         {
@@ -52,7 +66,24 @@ public class AuthController : ControllerBase
         }
     }
 
+    // [HttpPost("jwt/generate")]
+    // public async Task<IActionResult> GenerateJWT()
+    // {
+    //     var token = await _jwtService.GenerateTokenAsync("1", "trainee");
+    //     return Ok(new { token });
+    // }
 
+    // [Authorize(Roles = "admin")]
+    // [HttpGet("user/admin-role")]
+    // public IActionResult GetUserDetailsForAdmin()
+    // {
+    //     return Ok(new { name = "Rodel" });
+    // }
+
+    // [Authorize(Roles = "trainee")]
+    // [HttpGet("user/trainee-role")]
+    // public IActionResult GetUserDetailsForTrainee()
+    // {
+    //     return Ok(new { name = "Rodel" });
+    // }
 }
-
-

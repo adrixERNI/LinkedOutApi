@@ -7,6 +7,8 @@ using Amazon.S3;
 using Amazon.Runtime;
 using LinkedOutApi.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
+using LinkedOutApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,11 @@ Env.Load();
 
 builder.Services.AddHttpClient();
 builder.Services.AddApplicationServices();
+builder.Services.AddRouting(options =>
+{
+    options.LowercaseUrls = true;
+    options.LowercaseQueryStrings = true;
+});
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -45,15 +52,22 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.Authority = "https://accounts.google.com";
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
-        ValidIssuer = "https://accounts.google.com",
+        ValidIssuer = Environment.GetEnvironmentVariable("JWT_ISSUER"),
         ValidateAudience = true,
-        ValidAudience = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID")!,
-        ValidateLifetime = true
+        ValidAudience = Environment.GetEnvironmentVariable("JWT_AUDIENCE")!,
+        ValidateLifetime = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT_SECRET")!))
+
     };
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("TraineePolicy", policy => policy.RequireRole("Trainee"));
 });
 
 builder.Services.AddEndpointsApiExplorer();
@@ -70,7 +84,6 @@ builder.Services.AddSwaggerGen(options =>
         BearerFormat = "JWT",
         Scheme = "Bearer"
     });
-
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -96,6 +109,8 @@ app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseMiddleware<JwtCookieMiddleware>();
 
 app.MapControllers();
 

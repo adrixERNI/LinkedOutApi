@@ -13,7 +13,6 @@ public class AuthService : IAuthService
     private readonly ILogger<AuthService> _logger;
     private readonly AppDbContext _db;
 
-
     public AuthService(IHttpClientFactory httpClientFactory, ILogger<AuthService> logger, AppDbContext db)
     {
         _httpClientFactory = httpClientFactory;
@@ -41,7 +40,7 @@ public class AuthService : IAuthService
             throw new Exception("Token exchange failed");
 
         var json = await response.Content.ReadAsStringAsync();
-        var tokenResult = JsonSerializer.Deserialize<GoogleTokenResponseDTO>(json);
+        var tokenResult = JsonSerializer.Deserialize<GoogleTokenResultDTO>(json);
 
         if (tokenResult == null || string.IsNullOrEmpty(tokenResult.AccessToken))
             throw new Exception("Invalid token response");
