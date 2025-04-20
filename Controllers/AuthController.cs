@@ -1,4 +1,5 @@
 using LinkedOutApi.DTOs.Auth;
+using LinkedOutApi.DTOs.Response;
 using LinkedOutApi.Interfaces;
 using LinkedOutApi.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -32,38 +33,38 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("google/trainee")]
-    public async Task<ActionResult<GoogleSignInResponseDTO>> GoogleSignIn([FromBody] GoogleSignInRequestDTO request)
+    [ProducesResponseType(typeof(SuccessResponseDTO), 200)]
+    [ProducesResponseType(typeof(ErrorResponseDTO), 400)]
+    [ProducesResponseType(typeof(ErrorResponseDTO), 500)]
+    public async Task<ActionResult<SuccessResponseDTO>> GoogleSignIn([FromBody] GoogleSignInRequestDTO request)
     {
-        try
+        var userInfo = await _authService.AuthenticateWithGoogleAsync(request.Code);
+        var existingUser = await _authService.GetUserByEmailAsync(userInfo.Email);
+
+        if (existingUser == null)
         {
-
-            var userInfo = await _authService.AuthenticateWithGoogleAsync(request.Code);
-            var existingUser = await _authService.GetUserByEmailAsync(userInfo.Email);
-
-            if (existingUser == null)
-            {
-                var imageStream = await _imageService.DownloadImageAsync(userInfo.Picture);
-                var storedUser = await _authService.CreateUserAsync(userInfo.Name, userInfo.Email, "trainee");
-                var fileKey = $"profile-pictures/{storedUser!.Id}.jpg";
-                var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
-            }
-
-            var accessToken = await _jwtService.GenerateTokenAsync("1", UserRole.Trainee);
-
-            Response.Cookies.Append("access_token", accessToken, new CookieOptions
-            {
-                HttpOnly = true,
-                Secure = true,
-                SameSite = SameSiteMode.Lax,
-                Expires = DateTime.Now.AddMinutes(30)
-            });
-
-            return Ok(new { message = "Login successfully" });
+            var imageStream = await _imageService.DownloadImageAsync(userInfo.Picture);
+            var storedUser = await _authService.CreateUserAsync(userInfo.Name, userInfo.Email, "trainee");
+            var fileKey = $"profile-pictures/{storedUser!.Id}.jpg";
+            var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
         }
-        catch (Exception ex)
+
+        var accessToken = await _jwtService.GenerateTokenAsync("1", UserRole.Trainee);
+
+        Response.Cookies.Append("access_token", accessToken, new CookieOptions
         {
-            return BadRequest(ex.Message);
-        }
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.Lax,
+            Expires = DateTime.Now.AddMinutes(30)
+        });
+
+        return Ok(new SuccessResponseDTO
+        {
+            Message = "Login successfully",
+            StatusCode = 200,
+            Success = true
+        });
     }
 
     // [HttpPost("jwt/generate")]
@@ -87,3 +88,4 @@ public class AuthController : ControllerBase
     //     return Ok(new { name = "Rodel" });
     // }
 }
+

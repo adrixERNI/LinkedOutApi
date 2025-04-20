@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 
+namespace LinkedOutApi.DTOs.Auth;
+
 public class GoogleUserDTO
 {
     [JsonPropertyName("id")]

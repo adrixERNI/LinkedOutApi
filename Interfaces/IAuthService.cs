@@ -1,3 +1,4 @@
+using LinkedOutApi.DTOs.Auth;
 using LinkedOutApi.Entities;
 
 namespace LinkedOutApi.Interfaces;

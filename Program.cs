@@ -111,6 +111,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseMiddleware<JwtCookieMiddleware>();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.MapControllers();
 

@@ -2,6 +2,7 @@ using System.Text.Json;
 using LinkedOutApi.Data;
 using LinkedOutApi.DTOs.Auth;
 using LinkedOutApi.Entities;
+using LinkedOutApi.Exceptions;
 using LinkedOutApi.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -37,26 +38,26 @@ public class AuthService : IAuthService
         var response = await http.PostAsync("https://oauth2.googleapis.com/token", content);
 
         if (!response.IsSuccessStatusCode)
-            throw new Exception("Token exchange failed");
+            throw new HttpResponseException("Token exchange failed", 400);
 
         var json = await response.Content.ReadAsStringAsync();
         var tokenResult = JsonSerializer.Deserialize<GoogleTokenResultDTO>(json);
 
         if (tokenResult == null || string.IsNullOrEmpty(tokenResult.AccessToken))
-            throw new Exception("Invalid token response");
+            throw new HttpResponseException("Invalid token response", 400);
 
         var userRequest = new HttpRequestMessage(HttpMethod.Get, "https://www.googleapis.com/oauth2/v2/userinfo");
         userRequest.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", tokenResult.AccessToken);
         var userResponse = await http.SendAsync(userRequest);
 
         if (!userResponse.IsSuccessStatusCode)
-            throw new Exception("Failed to get user info");
+            throw new HttpResponseException("Failed to get user info", 400);
 
         var userJson = await userResponse.Content.ReadAsStringAsync();
         var googleUser = JsonSerializer.Deserialize<GoogleUserDTO>(userJson);
 
         if (googleUser == null)
-            throw new Exception("Invalid user info response");
+            throw new HttpResponseException("Invalid user info response", 400);
 
         return googleUser;
     }
