@@ -1,10 +1,30 @@
+using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using LinkedOutApi.Extensions;
+using Amazon.S3;
+using Amazon.Runtime;
+using LinkedOutApi.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+Env.Load();
+
 builder.Services.AddHttpClient();
+builder.Services.AddApplicationServices();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+var awsOptions = builder.Configuration.GetAWSOptions();
+
+awsOptions.Credentials = new BasicAWSCredentials(
+    Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"),
+    Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY")
+);
+builder.Services.AddDefaultAWSOptions(awsOptions);
+builder.Services.AddAWSService<IAmazonS3>();
 
 builder.Services.AddCors(options =>
 {
@@ -31,12 +51,13 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuer = true,
         ValidIssuer = "https://accounts.google.com",
         ValidateAudience = true,
-        ValidAudience = "YOUR_GOOGLE_CLIENT_ID",
+        ValidAudience = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID")!,
         ValidateLifetime = true
     };
 });
 
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth API", Version = "v1" });
