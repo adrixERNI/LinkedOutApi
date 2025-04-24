@@ -75,7 +75,7 @@ public class AuthService : IAuthService
             {
                 Name = name,
                 Email = email,
-                Role = role,
+                //Role = role,
                 IsApproved = false
             };
 
