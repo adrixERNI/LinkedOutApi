@@ -38,6 +38,7 @@ public class AuthController : ControllerBase
     [ProducesResponseType(typeof(ErrorResponseDTO), 500)]
     public async Task<ActionResult<SuccessResponseDTO>> GoogleSignIn([FromBody] GoogleSignInRequestDTO request)
     {
+        Console.WriteLine(request.Code);
         var userInfo = await _authService.AuthenticateWithGoogleAsync(request.Code);
         var existingUser = await _authService.GetUserByEmailAsync(userInfo.Email);
 
@@ -87,5 +88,11 @@ public class AuthController : ControllerBase
     // {
     //     return Ok(new { name = "Rodel" });
     // }
+
+    [HttpGet("test")]
+    public IActionResult GetUserDetailsForTrainee()
+    {
+        return Ok(new { name = Environment.GetEnvironmentVariable("JWT_SECRET")! });
+    }
 }
 
