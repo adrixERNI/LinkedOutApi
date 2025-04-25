@@ -26,4 +26,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\Mentor\" />
+    <Folder Include="Interfaces\Admin\" />
+    <Folder Include="Interfaces\Bootcamper\" />
+    <Folder Include="Interfaces\Common\" />
+    <Folder Include="Interfaces\Mentor\" />
+  </ItemGroup>
+
 </Project>
