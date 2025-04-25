@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using LinkedOutApi.DTOs;
+using LinkedOutApi.DTOs.User;
 using LinkedOutApi.Entities;
 
 namespace LinkedOutApi.Profiles
@@ -9,6 +9,16 @@ namespace LinkedOutApi.Profiles
         public MappingProfile()
         {
             CreateMap<CreateAssessmentDTO, MentorAssessment>().ReverseMap();
+
+            CreateMap<PostUserSkillDTO, UserSkill>().ReverseMap();
+
+            CreateMap<UserSkillDTO, UserSkill>()
+                .ForMember(dest => dest.UserId, opt => opt.Ignore());
+
+            CreateMap<UserSkill, UserSkillDTO>();
+
+            CreateMap<UserSkill, GetUserSkillDTO>()
+                .ForMember(dest => dest.SkillName, opt => opt.MapFrom(src => src.Skill.Name));
         }
     }
 }

@@ -1,9 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using AutoMapper;
+﻿using AutoMapper;
 using LinkedOutApi.Data;
 using LinkedOutApi.Entities;
-using LinkedOutApi.Interfaces.Mentor;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
+using LinkedOutApi.Interfaces.User;
+using Microsoft.EntityFrameworkCore;
 
 namespace LinkedOutApi.Repositories.Mentor
 {

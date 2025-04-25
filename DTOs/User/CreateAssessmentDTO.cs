@@ -1,4 +1,4 @@
-﻿namespace LinkedOutApi.DTOs
+﻿namespace LinkedOutApi.DTOs.User
 {
     public class CreateAssessmentDTO
     {

@@ -1,6 +1,6 @@
 ﻿using LinkedOutApi.Entities;
 
-namespace LinkedOutApi.Interfaces.Mentor
+namespace LinkedOutApi.Interfaces.User
 {
     public interface IMentorAssessmentRepository
     {

@@ -1,6 +1,4 @@
-﻿using Microsoft.Identity.Client;
-
-namespace LinkedOutApi.Entities
+﻿namespace LinkedOutApi.Entities
 {
     public class MentorAssessment
     {

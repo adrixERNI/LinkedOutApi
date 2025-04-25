@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
-using LinkedOutApi.DTOs;
+using LinkedOutApi.DTOs.User;
 using LinkedOutApi.Entities;
-using LinkedOutApi.Interfaces.Mentor;
-using Microsoft.AspNetCore.Http;
+using LinkedOutApi.Interfaces.User;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LinkedOutApi.Controllers.Mentor
+namespace LinkedOutApi.Controllers.User
 {
     [Route("api/[controller]")]
     [ApiController]
