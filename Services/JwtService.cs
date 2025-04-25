@@ -22,12 +22,13 @@ public class JwtService : IJwtService
         }
     }
 
-    public async Task<string> GenerateTokenAsync(string userId, UserRole role)
+    public async Task<string> GenerateTokenAsync(string userId,string googleId, UserRole role)
     {
         var claims = new List<Claim>
         {
             new Claim(JwtRegisteredClaimNames.Sub, userId),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            new Claim("googleId", googleId),
             new Claim(ClaimTypes.Role, role.ToString())
         };
 
@@ -38,7 +39,7 @@ public class JwtService : IJwtService
             issuer: _issuer,
             audience: _audience,
             claims: claims,
-            expires: DateTime.Now.AddMinutes(30),
+            expires: DateTime.Now.AddMinutes(60),
             signingCredentials: creds);
 
         return await Task.FromResult(new JwtSecurityTokenHandler().WriteToken(token));

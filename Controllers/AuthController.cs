@@ -45,12 +45,12 @@ public class AuthController : ControllerBase
         if (existingUser == null)
         {
             var imageStream = await _imageService.DownloadImageAsync(userInfo.Picture);
-            var storedUser = await _authService.CreateUserAsync(userInfo.Name, userInfo.Email, "trainee");
+            var storedUser = await _authService.CreateUserAsync(userInfo.Name, userInfo.Email, userInfo.Id, "trainee");
             var fileKey = $"profile-pictures/{storedUser!.Id}.jpg";
             var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
         }
 
-        var accessToken = await _jwtService.GenerateTokenAsync("1", UserRole.Trainee);
+        var accessToken = await _jwtService.GenerateTokenAsync("1",userInfo.Id, UserRole.Trainee); //userID, googleID, Role
 
         Response.Cookies.Append("access_token", accessToken, new CookieOptions
         {
