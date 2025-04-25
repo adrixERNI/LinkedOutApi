@@ -10,6 +10,9 @@ public class User
     public string Email { get; set; }
     //public string Status { get; set; }
     public bool IsApproved { get; set; } = false;
+
+    public string GoogleId { get; set; }
+
     public DateTime CreatedDate { get; set; }
     public DateTime? UpdatedDate { get; set; }
 

@@ -45,7 +45,7 @@ public class AuthController : ControllerBase
         if (existingUser == null)
         {
             var imageStream = await _imageService.DownloadImageAsync(userInfo.Picture);
-            var storedUser = await _authService.CreateUserAsync(userInfo.Name, userInfo.Email, "trainee");
+            var storedUser = await _authService.CreateUserAsync(userInfo.Name, userInfo.Email, userInfo.Id, "trainee");
             var fileKey = $"profile-pictures/{storedUser!.Id}.jpg";
             var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
         }
