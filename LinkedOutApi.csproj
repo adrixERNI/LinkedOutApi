@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\Mentor\" />
-    <Folder Include="Interfaces\Admin\" />
     <Folder Include="Interfaces\Bootcamper\" />
     <Folder Include="Interfaces\Common\" />
     <Folder Include="Interfaces\Mentor\" />
