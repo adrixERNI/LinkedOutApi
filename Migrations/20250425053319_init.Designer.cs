@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250425045738_init")]
+    [Migration("20250425053319_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -318,6 +318,158 @@ namespace LinkedOutApi.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Skills");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            Name = "Understanding of Key Concepts"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 1,
+                            Name = "Ability to Apply Concepts in Practice"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 1,
+                            Name = "Completion of Assigned Task"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 1,
+                            Name = "Code Quality"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 1,
+                            Name = "Use of Best Practices"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 1,
+                            Name = "Debugging and Troubleshooting"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CategoryId = 1,
+                            Name = "Velocity"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CategoryId = 2,
+                            Name = "Participation in Discussions"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CategoryId = 2,
+                            Name = "Collaboration with Peers"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CategoryId = 2,
+                            Name = "Ability to Seek Help or Clarify Doubts"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CategoryId = 2,
+                            Name = "Engagement During the Session"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CategoryId = 3,
+                            Name = "React"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CategoryId = 3,
+                            Name = "JavaScript"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CategoryId = 3,
+                            Name = "C#"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CategoryId = 3,
+                            Name = "API"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CategoryId = 3,
+                            Name = "App Security"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CategoryId = 3,
+                            Name = "Database"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CategoryId = 3,
+                            Name = "SQL"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CategoryId = 3,
+                            Name = "AI"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CategoryId = 3,
+                            Name = "Python"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CategoryId = 3,
+                            Name = "AWS"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CategoryId = 3,
+                            Name = "Azure"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CategoryId = 3,
+                            Name = "Manual Testing"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CategoryId = 3,
+                            Name = "Automated Testing"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CategoryId = 3,
+                            Name = "Coding Design Patterns"
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Topic", b =>
@@ -388,6 +540,10 @@ namespace LinkedOutApi.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("GoogleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ImageId")
                         .HasColumnType("int");

@@ -538,6 +538,10 @@ namespace LinkedOutApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("GoogleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ImageId")
                         .HasColumnType("int");
 
