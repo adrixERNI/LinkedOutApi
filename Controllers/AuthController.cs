@@ -50,7 +50,7 @@ public class AuthController : ControllerBase
             var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
         }
 
-        var accessToken = await _jwtService.GenerateTokenAsync("1","", UserRole.Trainee); //userID, googleID, Role
+        var accessToken = await _jwtService.GenerateTokenAsync("1",userInfo.Id, UserRole.Trainee); //userID, googleID, Role
 
         Response.Cookies.Append("access_token", accessToken, new CookieOptions
         {
