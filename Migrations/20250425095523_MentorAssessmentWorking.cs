@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LinkedOutApi.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class MentorAssessmentWorking : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -121,14 +121,14 @@ namespace LinkedOutApi.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    IsApproved = table.Column<bool>(type: "bit", nullable: false),
                     GoogleId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsApproved = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     BatchId = table.Column<int>(type: "int", nullable: false),
-                    ImageId = table.Column<int>(type: "int", nullable: false),
-                    RoleId = table.Column<int>(type: "int", nullable: false),
-                    CVId = table.Column<int>(type: "int", nullable: false)
+                    ImageId = table.Column<int>(type: "int", nullable: true),
+                    RoleId = table.Column<int>(type: "int", nullable: true),
+                    CVId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -143,20 +143,17 @@ namespace LinkedOutApi.Migrations
                         name: "FK_Users_CVs_CVId",
                         column: x => x.CVId,
                         principalTable: "CVs",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Users_Images_ImageId",
                         column: x => x.ImageId,
                         principalTable: "Images",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Users_Roles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "Roles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -263,14 +260,15 @@ namespace LinkedOutApi.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OverallRating = table.Column<int>(type: "int", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Tags = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MentorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     BootcamperId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TopicId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    OverallRating = table.Column<int>(type: "int", nullable: false),
+                    Comments = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Tags = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -282,11 +280,17 @@ namespace LinkedOutApi.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MentorAssessments_Users_UserId",
-                        column: x => x.UserId,
+                        name: "FK_MentorAssessments_Users_BootcamperId",
+                        column: x => x.BootcamperId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_MentorAssessments_Users_MentorId",
+                        column: x => x.MentorId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -343,6 +347,11 @@ namespace LinkedOutApi.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Batches",
+                columns: new[] { "Id", "Name", "Status" },
+                values: new object[] { 1, "Backend & Cloud 2025", "In Progress" });
+
+            migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
@@ -357,8 +366,8 @@ namespace LinkedOutApi.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "User" },
-                    { 2, "Admin" }
+                    { 1, "Bootcamper" },
+                    { 2, "Mentor" }
                 });
 
             migrationBuilder.InsertData(
@@ -393,20 +402,43 @@ namespace LinkedOutApi.Migrations
                     { 25, 3, "Coding Design Patterns" }
                 });
 
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "BatchId", "CVId", "CreatedDate", "Email", "GoogleId", "ImageId", "IsApproved", "Name", "RoleId", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"), 1, null, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "sample__bootcamper@gmail.com", "112906756278986482986", null, true, "Test_Bootcamper", 1, null },
+                    { new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"), 1, null, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "sample__bootcampermentor@gmail.com", "109846284989882836329", null, true, "Test_Mentor", 2, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Topics",
+                columns: new[] { "Id", "BatchId", "Name", "UserId" },
+                values: new object[,]
+                {
+                    { 1, 1, "Frontend Development", new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") },
+                    { 2, 1, "Backend Development", new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Certifications_UserId",
                 table: "Certifications",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MentorAssessments_BootcamperId",
+                table: "MentorAssessments",
+                column: "BootcamperId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MentorAssessments_MentorId",
+                table: "MentorAssessments",
+                column: "MentorId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_MentorAssessments_TopicId",
                 table: "MentorAssessments",
                 column: "TopicId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MentorAssessments_UserId",
-                table: "MentorAssessments",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MentorSkillFeedbacks_MentorAssessmentId",

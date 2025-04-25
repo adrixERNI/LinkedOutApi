@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.400" />
     <PackageReference Include="AWSSDK.S3" Version="3.7.416.14" />
     <PackageReference Include="DotNetEnv" Version="3.1.1" />
@@ -27,11 +28,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Mentor\" />
     <Folder Include="Interfaces\Admin\" />
     <Folder Include="Interfaces\Bootcamper\" />
     <Folder Include="Interfaces\Common\" />
-    <Folder Include="Interfaces\Mentor\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

@@ -9,6 +9,9 @@ using LinkedOutApi.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using LinkedOutApi.Middleware;
+using LinkedOutApi.Interfaces.Mentor;
+using LinkedOutApi.Repositories.Mentor;
+using LinkedOutApi.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +47,8 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+builder.Services.AddScoped<IMentorAssessmentRepository, MentorAssessmentRepository>();
 
 builder.Services.AddAuthentication(options =>
 {

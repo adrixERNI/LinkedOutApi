@@ -60,6 +60,14 @@ namespace LinkedOutApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Batches");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Backend & Cloud 2025",
+                            Status = "In Progress"
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.CV", b =>
@@ -174,12 +182,14 @@ namespace LinkedOutApi.Migrations
                     b.Property<Guid>("BootcamperId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Comment")
-                        .IsRequired()
+                    b.Property<string>("Comments")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<Guid>("MentorId")
                         .HasColumnType("uniqueidentifier");
@@ -188,20 +198,21 @@ namespace LinkedOutApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Tags")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TopicId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TopicId");
+                    b.HasIndex("BootcamperId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("MentorId");
+
+                    b.HasIndex("TopicId");
 
                     b.ToTable("MentorAssessments");
                 });
@@ -286,12 +297,12 @@ namespace LinkedOutApi.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "User"
+                            Name = "Bootcamper"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Admin"
+                            Name = "Mentor"
                         });
                 });
 
@@ -494,6 +505,22 @@ namespace LinkedOutApi.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Topics");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BatchId = 1,
+                            Name = "Frontend Development",
+                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BatchId = 1,
+                            Name = "Backend Development",
+                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.TopicSkill", b =>
@@ -528,10 +555,10 @@ namespace LinkedOutApi.Migrations
                     b.Property<int>("BatchId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CVId")
+                    b.Property<int?>("CVId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -542,7 +569,7 @@ namespace LinkedOutApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ImageId")
+                    b.Property<int?>("ImageId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsApproved")
@@ -552,7 +579,7 @@ namespace LinkedOutApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
+                    b.Property<int?>("RoleId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -572,6 +599,30 @@ namespace LinkedOutApi.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
+                            BatchId = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "sample__bootcampermentor@gmail.com",
+                            GoogleId = "109846284989882836329",
+                            IsApproved = true,
+                            Name = "Test_Mentor",
+                            RoleId = 2
+                        },
+                        new
+                        {
+                            Id = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"),
+                            BatchId = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "sample__bootcamper@gmail.com",
+                            GoogleId = "112906756278986482986",
+                            IsApproved = true,
+                            Name = "Test_Bootcamper",
+                            RoleId = 1
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.UserSkill", b =>
@@ -613,21 +664,29 @@ namespace LinkedOutApi.Migrations
 
             modelBuilder.Entity("LinkedOutApi.Entities.MentorAssessment", b =>
                 {
+                    b.HasOne("LinkedOutApi.Entities.User", "Bootcamper")
+                        .WithMany()
+                        .HasForeignKey("BootcamperId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("LinkedOutApi.Entities.User", "Mentor")
+                        .WithMany()
+                        .HasForeignKey("MentorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("LinkedOutApi.Entities.Topic", "Topic")
                         .WithMany()
                         .HasForeignKey("TopicId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LinkedOutApi.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Bootcamper");
+
+                    b.Navigation("Mentor");
 
                     b.Navigation("Topic");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.MentorSkillFeedback", b =>
@@ -719,21 +778,15 @@ namespace LinkedOutApi.Migrations
 
                     b.HasOne("LinkedOutApi.Entities.CV", "CV")
                         .WithMany()
-                        .HasForeignKey("CVId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CVId");
 
                     b.HasOne("LinkedOutApi.Entities.Image", "Image")
                         .WithMany()
-                        .HasForeignKey("ImageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ImageId");
 
                     b.HasOne("LinkedOutApi.Entities.Role", "Role")
                         .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RoleId");
 
                     b.Navigation("Batch");
 

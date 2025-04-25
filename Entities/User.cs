@@ -8,18 +8,16 @@ public class User
     public Guid Id { get; set; }
     public string Name { get; set; }
     public string Email { get; set; }
-    //public string Status { get; set; }
+    public string GoogleId { get; set; }
     public bool IsApproved { get; set; } = false;
 
-    public string GoogleId { get; set; }
-
-    public DateTime CreatedDate { get; set; }
+    public DateTime? CreatedDate { get; set; }
     public DateTime? UpdatedDate { get; set; }
 
     public int BatchId { get; set; }
-    public int ImageId { get; set; }
-    public int RoleId { get; set; }
-    public int CVId { get; set; }
+    public int? ImageId { get; set; }
+    public int? RoleId { get; set; }
+    public int? CVId { get; set; }
 
     public ICollection<UserSkill> UserSkills { get; set; }
 

@@ -43,11 +43,82 @@ namespace LinkedOutApi.Data
                 .HasForeignKey(t => t.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<MentorAssessment>()
+                .HasOne(ma => ma.Mentor)
+                .WithMany()
+                .HasForeignKey(ma => ma.MentorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<MentorAssessment>()
+                .HasOne(ma => ma.Bootcamper)
+                .WithMany()
+                .HasForeignKey(ma => ma.BootcamperId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<User>(r =>
+            {
+                r.HasData(
+                    new User { 
+                        Id = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa6"), 
+                        Name = "Test_Mentor",
+                        Email = "sample__bootcampermentor@gmail.com",
+                        IsApproved = true,
+                        GoogleId = "109846284989882836329",
+                        CreatedDate = new DateTime(2024, 1, 1),
+                        BatchId = 1,
+                        RoleId = 2
+                    },
+                    new User { 
+                        Id = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4"), 
+                        Name = "Test_Bootcamper",
+                        Email = "sample__bootcamper@gmail.com",
+                        IsApproved = true,
+                        GoogleId = "112906756278986482986",
+                        CreatedDate = new DateTime(2024, 1, 1),
+                        BatchId = 1,
+                        RoleId = 1
+                    }
+
+                );
+
+            });
+
+            modelBuilder.Entity<Topic>(r =>
+            {
+                r.HasData(
+                    new Topic { 
+                        Id = 1,
+                        Name = "Frontend Development",
+                        UserId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4"),
+                        BatchId = 1
+                    },
+                    new Topic { 
+                        Id = 2,
+                        Name = "Backend Development",
+                        UserId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4"),
+                        BatchId = 1
+                    }
+                );
+            });
+
+            modelBuilder.Entity<Batch>(r =>
+            {
+                r.HasData(
+                    new Batch
+                    {
+                        Id = 1,
+                        Name = "Backend & Cloud 2025",
+                        Status = "In Progress"
+                    }
+                );
+            });
+
+
             modelBuilder.Entity<Role>(r => 
             {
                 r.HasData(
-                    new Role { Id = 1, Name = "User" },
-                    new Role { Id = 2, Name = "Admin" }
+                    new Role { Id = 1, Name = "Bootcamper" },
+                    new Role { Id = 2, Name = "Mentor" }
                 );
             });
 
