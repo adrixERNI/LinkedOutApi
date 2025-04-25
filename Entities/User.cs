@@ -16,10 +16,10 @@ public class User
     public DateTime CreatedDate { get; set; }
     public DateTime? UpdatedDate { get; set; }
 
-    public Guid BatchId { get; set; }
-    public Guid ImageId { get; set; }
-    public Guid RoleId { get; set; }
-    public Guid CVId { get; set; }
+    public int BatchId { get; set; }
+    public int ImageId { get; set; }
+    public int RoleId { get; set; }
+    public int CVId { get; set; }
 
     public ICollection<UserSkill> UserSkills { get; set; }
 
