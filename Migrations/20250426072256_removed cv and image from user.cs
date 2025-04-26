@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LinkedOutApi.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class removedcvandimagefromuser : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -52,36 +52,6 @@ namespace LinkedOutApi.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CVs",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    File = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CVs", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Images",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Path = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Images", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -132,9 +102,7 @@ namespace LinkedOutApi.Migrations
                     BatchId = table.Column<int>(type: "int", nullable: false),
                     Bio = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Position = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageId = table.Column<int>(type: "int", nullable: true),
-                    RoleId = table.Column<int>(type: "int", nullable: true),
-                    CVId = table.Column<int>(type: "int", nullable: true)
+                    RoleId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -145,16 +113,6 @@ namespace LinkedOutApi.Migrations
                         principalTable: "Batches",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Users_CVs_CVId",
-                        column: x => x.CVId,
-                        principalTable: "CVs",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Users_Images_ImageId",
-                        column: x => x.ImageId,
-                        principalTable: "Images",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Users_Roles_RoleId",
                         column: x => x.RoleId,
@@ -178,6 +136,50 @@ namespace LinkedOutApi.Migrations
                     table.PrimaryKey("PK_Certifications", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Certifications_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CVs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    File = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CVs", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CVs_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Path = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Images_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -364,11 +366,6 @@ namespace LinkedOutApi.Migrations
                 values: new object[] { 1, false, "Backend & Cloud 2025", "In Progress" });
 
             migrationBuilder.InsertData(
-                table: "CVs",
-                columns: new[] { "Id", "File", "IsDeleted", "Name" },
-                values: new object[] { 1, "Pdf", false, "My Resume" });
-
-            migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
@@ -377,11 +374,6 @@ namespace LinkedOutApi.Migrations
                     { 2, "Soft" },
                     { 3, "Self" }
                 });
-
-            migrationBuilder.InsertData(
-                table: "Images",
-                columns: new[] { "Id", "IsDeleted", "Name", "Path" },
-                values: new object[] { 1, false, "Image1", "Path/heyYou" });
 
             migrationBuilder.InsertData(
                 table: "Roles",
@@ -426,12 +418,22 @@ namespace LinkedOutApi.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "BatchId", "Bio", "CVId", "CreatedDate", "Email", "GoogleId", "ImageId", "IsApproved", "IsDeleted", "Name", "Position", "RoleId", "UpdatedDate" },
+                columns: new[] { "Id", "BatchId", "Bio", "CreatedDate", "Email", "GoogleId", "IsApproved", "IsDeleted", "Name", "Position", "RoleId", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"), 1, "My Bio", 1, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "sample__bootcamper@gmail.com", "112906756278986482986", 1, true, false, "Test_Bootcamper", null, 1, null },
-                    { new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"), 1, null, 1, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "sample__bootcampermentor@gmail.com", "109846284989882836329", 1, true, false, "Test_Mentor", "DevOps", 2, null }
+                    { new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"), 1, "My Bio", new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "sample__bootcamper@gmail.com", "112906756278986482986", true, false, "Test_Bootcamper", null, 1, null },
+                    { new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"), 1, null, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "sample__bootcampermentor@gmail.com", "109846284989882836329", true, false, "Test_Mentor", "DevOps", 2, null }
                 });
+
+            migrationBuilder.InsertData(
+                table: "CVs",
+                columns: new[] { "Id", "File", "IsDeleted", "Name", "UserId" },
+                values: new object[] { 1, "Pdf", false, "My Resume", new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") });
+
+            migrationBuilder.InsertData(
+                table: "Images",
+                columns: new[] { "Id", "IsDeleted", "Name", "Path", "UserId" },
+                values: new object[] { 1, false, "Image1", "Path/heyYou", new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") });
 
             migrationBuilder.InsertData(
                 table: "Topics",
@@ -445,6 +447,16 @@ namespace LinkedOutApi.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Certifications_UserId",
                 table: "Certifications",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CVs_UserId",
+                table: "CVs",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Images_UserId",
+                table: "Images",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -508,20 +520,10 @@ namespace LinkedOutApi.Migrations
                 column: "BatchId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_CVId",
-                table: "Users",
-                column: "CVId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Users_Email",
                 table: "Users",
                 column: "Email",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Users_ImageId",
-                table: "Users",
-                column: "ImageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_RoleId",
@@ -547,6 +549,12 @@ namespace LinkedOutApi.Migrations
 
             migrationBuilder.DropTable(
                 name: "Certifications");
+
+            migrationBuilder.DropTable(
+                name: "CVs");
+
+            migrationBuilder.DropTable(
+                name: "Images");
 
             migrationBuilder.DropTable(
                 name: "MentorSkillFeedbacks");
@@ -577,12 +585,6 @@ namespace LinkedOutApi.Migrations
 
             migrationBuilder.DropTable(
                 name: "Batches");
-
-            migrationBuilder.DropTable(
-                name: "CVs");
-
-            migrationBuilder.DropTable(
-                name: "Images");
 
             migrationBuilder.DropTable(
                 name: "Roles");

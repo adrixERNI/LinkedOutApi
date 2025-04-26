@@ -20,16 +20,12 @@ public class User
     public string? Bio {get; set;}
 
     public string? Position {get; set;}
-    
-    public int? ImageId { get; set; }
+
     public int? RoleId { get; set; }
-    public int? CVId { get; set; }
 
 
     public ICollection<UserSkill> UserSkills { get; set; }
 
     public Batch Batch { get; set; }
-    public Image Image { get; set; }
     public Role Role { get; set; }
-    public CV CV { get; set; }
 }

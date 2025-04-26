@@ -16,16 +16,16 @@ public class UserTraineeProfile : Profile
     {
     
         CreateMap<User, UserTraineeDTO>()
-            .ForMember(dest => dest.Image, opt => opt.MapFrom(src => new ImageDTO
-            {
-                Name = src.Image.Name,
-                Path = src.Image.Path 
-            }))
-            .ForMember(dest => dest.Resume, opt => opt.MapFrom(src => new CvDTO
-            {
-                Name = src.CV.Name,
-                File = src.CV.File  
-            }))
+            //.ForMember(dest => dest.Image, opt => opt.MapFrom(src => new ImageDTO
+            //{
+            //    Name = src.Image.Name,
+            //    Path = src.Image.Path 
+            //}))
+            //.ForMember(dest => dest.Resume, opt => opt.MapFrom(src => new CvDTO
+            //{
+            //    Name = src.CV.Name,
+            //    File = src.CV.File  
+            //}))
           .ForMember(dest => dest.Batch, opt => opt.MapFrom(src => new BatchDTO
             {
                 Name = src.Batch.Name,

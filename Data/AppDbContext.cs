@@ -68,8 +68,8 @@ namespace LinkedOutApi.Data
                         BatchId = 1,
                         RoleId = 2,
                         Position = "DevOps",
-                        CVId = 1,
-                        ImageId = 1
+                        //CVId = 1,
+                        //ImageId = 1
 
 
                     },
@@ -82,8 +82,8 @@ namespace LinkedOutApi.Data
                         CreatedDate = new DateTime(2024, 1, 1),
                         BatchId = 1,
                         RoleId = 1,
-                        CVId = 1,
-                        ImageId = 1,
+                        //CVId = 1,
+                        //ImageId = 1,
                         Bio = "My Bio"
 
                     }
@@ -128,7 +128,8 @@ namespace LinkedOutApi.Data
                     {
                         Id = 1,
                         Name = "My Resume",
-                        File = "Pdf"
+                        File = "Pdf",
+                        UserId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4")
                     }
                 );
             });
@@ -140,7 +141,8 @@ namespace LinkedOutApi.Data
                     {
                         Id = 1,
                         Name = "Image1",
-                        Path = "Path/heyYou"
+                        Path = "Path/heyYou",
+                        UserId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4")
                     }
                 );
             });

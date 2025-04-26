@@ -31,6 +31,7 @@
     <Folder Include="Controllers\Mentor\" />
     <Folder Include="Interfaces\Admin\" />
     <Folder Include="Interfaces\Common\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

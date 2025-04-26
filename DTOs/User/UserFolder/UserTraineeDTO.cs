@@ -11,6 +11,6 @@ public class UserTraineeDTO
     public string Email { get; set; }
     public BatchDTO Batch { get; set; }
     public string Bio { get; set; }
-    public ImageDTO Image {get; set;}
-    public CvDTO Resume {get; set;}
+    //public ImageDTO Image {get; set;}
+    //public CvDTO Resume {get; set;}
 }

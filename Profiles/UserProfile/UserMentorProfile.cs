@@ -17,11 +17,11 @@ public class UserMentorProfile : Profile
                 Name = src.Batch.Name,
                 Status = src.Batch.Status
             }))
-            .ForMember(dest => dest.Image, opt => opt.MapFrom(src => new ImageDTO
-            {
-                Name = src.Image.Name,
-                Path = src.Image.Path
-            }))
+            //.ForMember(dest => dest.Image, opt => opt.MapFrom(src => new ImageDTO
+            //{
+            //    Name = src.Image.Name,
+            //    Path = src.Image.Path
+            //}))
             .ReverseMap();
             
     }

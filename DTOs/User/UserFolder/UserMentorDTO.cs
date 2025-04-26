@@ -7,11 +7,11 @@ namespace LinkedOutApi.DTOs.User.TraineeFolder;
 
 public class UserMentorDTO
 {
-    public string name {get; set;}
-    public string position {get; set;}
-    public string email {get; set;}
+    public string Name {get; set;}
+    public string Position {get; set;}
+    public string Email {get; set;}
     public BatchDTO Batch { get; set; }
 
-    public ImageDTO Image {get; set;}
+    //public ImageDTO Image {get; set;}
 
 }

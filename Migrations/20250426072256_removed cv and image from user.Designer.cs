@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250426024856_initial")]
-    partial class initial
+    [Migration("20250426072256_removed cv and image from user")]
+    partial class removedcvandimagefromuser
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -96,7 +96,12 @@ namespace LinkedOutApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("CVs");
 
@@ -106,7 +111,8 @@ namespace LinkedOutApi.Migrations
                             Id = 1,
                             File = "Pdf",
                             IsDeleted = false,
-                            Name = "My Resume"
+                            Name = "My Resume",
+                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
                         });
                 });
 
@@ -191,7 +197,12 @@ namespace LinkedOutApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Images");
 
@@ -201,7 +212,8 @@ namespace LinkedOutApi.Migrations
                             Id = 1,
                             IsDeleted = false,
                             Name = "Image1",
-                            Path = "Path/heyYou"
+                            Path = "Path/heyYou",
+                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
                         });
                 });
 
@@ -606,9 +618,6 @@ namespace LinkedOutApi.Migrations
                     b.Property<string>("Bio")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CVId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -619,9 +628,6 @@ namespace LinkedOutApi.Migrations
                     b.Property<string>("GoogleId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ImageId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("IsApproved")
                         .HasColumnType("bit");
@@ -646,12 +652,8 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("BatchId");
 
-                    b.HasIndex("CVId");
-
                     b.HasIndex("Email")
                         .IsUnique();
-
-                    b.HasIndex("ImageId");
 
                     b.HasIndex("RoleId");
 
@@ -662,11 +664,9 @@ namespace LinkedOutApi.Migrations
                         {
                             Id = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
                             BatchId = 1,
-                            CVId = 1,
                             CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "sample__bootcampermentor@gmail.com",
                             GoogleId = "109846284989882836329",
-                            ImageId = 1,
                             IsApproved = true,
                             IsDeleted = false,
                             Name = "Test_Mentor",
@@ -678,11 +678,9 @@ namespace LinkedOutApi.Migrations
                             Id = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"),
                             BatchId = 1,
                             Bio = "My Bio",
-                            CVId = 1,
                             CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "sample__bootcamper@gmail.com",
                             GoogleId = "112906756278986482986",
-                            ImageId = 1,
                             IsApproved = true,
                             IsDeleted = false,
                             Name = "Test_Bootcamper",
@@ -719,7 +717,29 @@ namespace LinkedOutApi.Migrations
                     b.ToTable("UserSkills");
                 });
 
+            modelBuilder.Entity("LinkedOutApi.Entities.CV", b =>
+                {
+                    b.HasOne("LinkedOutApi.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("LinkedOutApi.Entities.Certification", b =>
+                {
+                    b.HasOne("LinkedOutApi.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("LinkedOutApi.Entities.Image", b =>
                 {
                     b.HasOne("LinkedOutApi.Entities.User", "User")
                         .WithMany()
@@ -844,23 +864,11 @@ namespace LinkedOutApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LinkedOutApi.Entities.CV", "CV")
-                        .WithMany()
-                        .HasForeignKey("CVId");
-
-                    b.HasOne("LinkedOutApi.Entities.Image", "Image")
-                        .WithMany()
-                        .HasForeignKey("ImageId");
-
                     b.HasOne("LinkedOutApi.Entities.Role", "Role")
                         .WithMany()
                         .HasForeignKey("RoleId");
 
                     b.Navigation("Batch");
-
-                    b.Navigation("CV");
-
-                    b.Navigation("Image");
 
                     b.Navigation("Role");
                 });

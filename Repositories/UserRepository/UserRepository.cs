@@ -18,8 +18,8 @@ public class UserRepository : IUserRepository
     public async Task<List<Entities.User>> GetAllUserAsync(){
         return await _context.Users
                 .Include(u => u.Batch)
-                .Include(u => u.Image)
-                .Include(u => u.CV)
+                //.Include(u => u.Image)
+                //.Include(u => u.CV)
                 .Include(u => u.Role)
                 .Where(u=> u.RoleId == 1)
                 .ToListAsync();
@@ -28,7 +28,7 @@ public class UserRepository : IUserRepository
     public async Task<List<Entities.User>> GetAllMentorAsync(){
         return await _context.Users
                 .Include(u => u.Batch)
-                .Include(u => u.Image)
+                //.Include(u => u.Image)
                 .Include(u => u.Role)
                 .Where(u=> u.RoleId == 2)
                 .ToListAsync();
