@@ -26,7 +26,7 @@ namespace LinkedOutApi.Repositories.Admin
 
             if (batchToDelete == null)
             {
-                throw new ArgumentException("Batch doesn't exist.");
+                throw new KeyNotFoundException("Batch doesn't exist.");
             }
             batchToDelete.IsDeleted = true;
             await _context.SaveChangesAsync();
@@ -38,7 +38,7 @@ namespace LinkedOutApi.Repositories.Admin
             var batch = await _context.Batches.FirstOrDefaultAsync(b => b.Id == id && b.IsDeleted == false);
             if (batch == null)
             {
-                return null;
+                throw new KeyNotFoundException("Batch with that Id doesn't exist");
             }
             return batch;
         }
@@ -55,11 +55,6 @@ namespace LinkedOutApi.Repositories.Admin
             if (batchToEdit == null)
             {
                 throw new KeyNotFoundException("No Batch Found");
-            }
-
-            if(string.IsNullOrWhiteSpace(batch.Name) || string.IsNullOrWhiteSpace(batch.Status))
-            {
-                throw new ArgumentException("Batch Name and/or Status Can't Be Empty");
             }
 
             batchToEdit.Name = batch.Name;

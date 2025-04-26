@@ -17,7 +17,8 @@ public class BatchCreateDTO
 
 public class BatchUpdateDTO
 {
-    public int Id { get; set; }
     public string Name { get; set; }
     public string Status { get; set; }
+
+    //same as read but im too tired; 2:47 am
 }

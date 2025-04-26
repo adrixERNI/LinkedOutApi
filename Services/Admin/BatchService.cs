@@ -16,32 +16,50 @@ namespace LinkedOutApi.Services.Admin
             _mapper = mapper;
         }
 
-        public async Task<BatchCreateDTO> CreateBatchAsync(BatchCreateDTO batchDTO)
+        public async Task<BatchReadDTO> CreateBatchAsync(BatchCreateDTO batchDTO)
         {
             var mappedBatch = _mapper.Map<Batch>(batchDTO);
             var createdBatch = await _batchRepository.CreateBatchAsync(mappedBatch);
 
-            return _mapper.Map<BatchCreateDTO>(createdBatch);
+            return _mapper.Map<BatchReadDTO>(createdBatch);
         }
 
-        public Task<BatchReadDTO> DeleteBatchAsync(int id)
+        public async Task<BatchReadDTO> DeleteBatchAsync(int id)
         {
-            throw new NotImplementedException();
+            var batchToDelete = await _batchRepository.DeleteBatchAsync(id);
+            var mappedBatch = _mapper.Map<BatchReadDTO>(batchToDelete);
+            return mappedBatch;
         }
 
-        public Task<BatchReadDTO> GetBatchByIdAsync(int id)
+        public async Task<BatchReadDTO> GetBatchByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var batch = await _batchRepository.GetBatchByIdAsync(id);
+            var mappedBatch = _mapper.Map<BatchReadDTO>(batch);
+            return mappedBatch;
+
         }
 
-        public Task<BatchReadDTO> GetBatchesAsync()
+        public async Task<ICollection<BatchReadDTO>> GetBatchesAsync()
         {
-            throw new NotImplementedException();
+            var batches = await _batchRepository.GetBatchesAsync();
+            if (batches == null)
+            {
+                return null;
+            }
+            var mappedBatches = _mapper.Map<ICollection<BatchReadDTO>>(batches);
+            return mappedBatches;
         }
 
-        public Task<BatchUpdateDTO> UpdateBatchAsync(int id, BatchUpdateDTO batchDTO)
+        public async Task<BatchUpdateDTO> UpdateBatchAsync(int id, BatchUpdateDTO batchDTO)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(batchDTO.Name) || string.IsNullOrWhiteSpace(batchDTO.Status))
+            {
+                throw new ArgumentException("Batch Name and/or Status Can't Be Empty");
+            }
+            var mappedBatch = _mapper.Map<Batch>(batchDTO);
+            var batch = await _batchRepository.UpdateBatchAsync(id, mappedBatch);
+            
+            return _mapper.Map<BatchUpdateDTO>(batch);
         }
     }
 }
