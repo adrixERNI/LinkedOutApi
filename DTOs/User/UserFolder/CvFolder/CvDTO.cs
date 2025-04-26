@@ -1,6 +1,6 @@
 using System;
 
-namespace LinkedOutApi.DTOs.User.TraineeFolder.CVFolder;
+namespace LinkedOutApi.DTOs.User.UserFolder.CVFolder;
 
 public class CvDTO
 {   

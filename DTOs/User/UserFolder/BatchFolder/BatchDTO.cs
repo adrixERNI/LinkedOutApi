@@ -1,6 +1,6 @@
 using System;
 
-namespace LinkedOutApi.DTOs.User.TraineeFolder.BatchFolder;
+namespace LinkedOutApi.DTOs.User.UserFolder.BatchFolder;
 
 public class BatchDTO
 {

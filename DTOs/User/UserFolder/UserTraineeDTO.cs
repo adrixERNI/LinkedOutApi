@@ -1,7 +1,7 @@
 using System;
-using LinkedOutApi.DTOs.User.TraineeFolder.BatchFolder;
-using LinkedOutApi.DTOs.User.TraineeFolder.CVFolder;
-using LinkedOutApi.DTOs.User.TraineeFolder.ImageFolder;
+using LinkedOutApi.DTOs.User.UserFolder.BatchFolder;
+using LinkedOutApi.DTOs.User.UserFolder.CVFolder;
+using LinkedOutApi.DTOs.User.UserFolder.ImageFolder;
 
 namespace LinkedOutApi.DTOs.User.TraineeFolder;
 

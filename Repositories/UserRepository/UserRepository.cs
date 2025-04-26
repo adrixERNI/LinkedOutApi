@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using LinkedOutApi.Data;
 using LinkedOutApi.Entities;
 
-namespace LinkedOutApi.Repositories.TraineeRepository;
+namespace LinkedOutApi.Repositories.UserRepostiory;
 
 public class UserRepository : IUserRepository
 {

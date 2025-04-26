@@ -11,7 +11,7 @@ using System.Text;
 using LinkedOutApi.Middleware;
 using Amazon;
 using LinkedOutApi.Profiles.UserTraineeProfile;
-using LinkedOutApi.Repositories.TraineeRepository;
+using LinkedOutApi.Repositories.UserRepostiory;
 using LinkedOutApi.Profiles;
 using LinkedOutApi.Interfaces.User;
 using LinkedOutApi.Repositories.User;

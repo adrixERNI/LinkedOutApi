@@ -1,6 +1,6 @@
 using System;
 
-namespace LinkedOutApi.DTOs.User.TraineeFolder.ImageFolder;
+namespace LinkedOutApi.DTOs.User.UserFolder.ImageFolder;
 
 public class ImageDTO
 {

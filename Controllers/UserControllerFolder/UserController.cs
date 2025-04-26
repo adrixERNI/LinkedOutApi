@@ -1,7 +1,7 @@
 using System;
 using AutoMapper;
 using LinkedOutApi.DTOs.User.TraineeFolder;
-using LinkedOutApi.Repositories.TraineeRepository;
+using LinkedOutApi.Repositories.UserRepostiory;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

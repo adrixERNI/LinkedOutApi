@@ -1,7 +1,7 @@
 using System;
 using LinkedOutApi.Entities;
 
-namespace LinkedOutApi.Repositories.TraineeRepository;
+namespace LinkedOutApi.Repositories.UserRepostiory;
 
 public interface IUserRepository
 {

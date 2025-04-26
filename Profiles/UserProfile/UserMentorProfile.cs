@@ -1,8 +1,9 @@
 using System;
 using AutoMapper;
 using LinkedOutApi.DTOs.User.TraineeFolder;
-using LinkedOutApi.DTOs.User.TraineeFolder.BatchFolder;
-using LinkedOutApi.DTOs.User.TraineeFolder.ImageFolder;
+using LinkedOutApi.DTOs.User.UserFolder;
+using LinkedOutApi.DTOs.User.UserFolder.BatchFolder;
+using LinkedOutApi.DTOs.User.UserFolder.ImageFolder;
 using LinkedOutApi.Entities;
 
 namespace LinkedOutApi.Profiles.UserProfile;
