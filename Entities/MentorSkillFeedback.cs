@@ -7,6 +7,7 @@
 
         public int MentorAssessmentId { get; set; }
         public int SkillId { get; set; }
+        public bool IsDeleted { get; set; }
 
         public MentorAssessment MentorAssessment { get; set; }
         public Skill Skill { get; set; }

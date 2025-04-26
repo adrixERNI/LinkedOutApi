@@ -5,7 +5,7 @@ namespace LinkedOutApi.Repositories.TraineeRepository;
 
 public interface IUserRepository
 {
-    Task<List<User>> GetAllUserAsync();
-    Task<List<User>> GetAllMentorAsync();
+    Task<List<Entities.User>> GetAllUserAsync();
+    Task<List<Entities.User>> GetAllMentorAsync();
 
 }

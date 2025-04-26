@@ -8,6 +8,7 @@
         public string TechUsed { get; set; }
         public string RepoLink { get; set; }
         public Guid UserId { get; set; }
+        public bool IsDeleted { get; set; }
 
         public User User { get; set; }
     }

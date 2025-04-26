@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250426014554_init")]
-    partial class init
+    [Migration("20250426024856_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,6 +52,9 @@ namespace LinkedOutApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -63,6 +66,15 @@ namespace LinkedOutApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Batches");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsDeleted = false,
+                            Name = "Backend & Cloud 2025",
+                            Status = "In Progress"
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.CV", b =>
@@ -77,6 +89,9 @@ namespace LinkedOutApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -84,6 +99,15 @@ namespace LinkedOutApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CVs");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            File = "Pdf",
+                            IsDeleted = false,
+                            Name = "My Resume"
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Category", b =>
@@ -131,6 +155,9 @@ namespace LinkedOutApi.Migrations
                     b.Property<DateOnly>("Expiration")
                         .HasColumnType("date");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -153,6 +180,9 @@ namespace LinkedOutApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -164,6 +194,15 @@ namespace LinkedOutApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Images");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsDeleted = false,
+                            Name = "Image1",
+                            Path = "Path/heyYou"
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.MentorAssessment", b =>
@@ -177,12 +216,14 @@ namespace LinkedOutApi.Migrations
                     b.Property<Guid>("BootcamperId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Comment")
-                        .IsRequired()
+                    b.Property<string>("Comments")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<Guid>("MentorId")
                         .HasColumnType("uniqueidentifier");
@@ -191,20 +232,21 @@ namespace LinkedOutApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Tags")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TopicId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TopicId");
+                    b.HasIndex("BootcamperId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("MentorId");
+
+                    b.HasIndex("TopicId");
 
                     b.ToTable("MentorAssessments");
                 });
@@ -216,6 +258,9 @@ namespace LinkedOutApi.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<int>("MentorAssessmentId")
                         .HasColumnType("int");
@@ -246,6 +291,9 @@ namespace LinkedOutApi.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("RepoLink")
                         .IsRequired()
@@ -483,6 +531,9 @@ namespace LinkedOutApi.Migrations
                     b.Property<int>("BatchId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -497,6 +548,24 @@ namespace LinkedOutApi.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Topics");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BatchId = 1,
+                            IsDeleted = false,
+                            Name = "Frontend Development",
+                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BatchId = 1,
+                            IsDeleted = false,
+                            Name = "Backend Development",
+                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.TopicSkill", b =>
@@ -506,6 +575,9 @@ namespace LinkedOutApi.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<int>("SkillId")
                         .HasColumnType("int");
@@ -532,13 +604,12 @@ namespace LinkedOutApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Bio")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CVId")
+                    b.Property<int?>("CVId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -549,10 +620,13 @@ namespace LinkedOutApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ImageId")
+                    b.Property<int?>("ImageId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -560,10 +634,9 @@ namespace LinkedOutApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Position")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
+                    b.Property<int?>("RoleId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -583,6 +656,38 @@ namespace LinkedOutApi.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
+                            BatchId = 1,
+                            CVId = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "sample__bootcampermentor@gmail.com",
+                            GoogleId = "109846284989882836329",
+                            ImageId = 1,
+                            IsApproved = true,
+                            IsDeleted = false,
+                            Name = "Test_Mentor",
+                            Position = "DevOps",
+                            RoleId = 2
+                        },
+                        new
+                        {
+                            Id = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"),
+                            BatchId = 1,
+                            Bio = "My Bio",
+                            CVId = 1,
+                            CreatedDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "sample__bootcamper@gmail.com",
+                            GoogleId = "112906756278986482986",
+                            ImageId = 1,
+                            IsApproved = true,
+                            IsDeleted = false,
+                            Name = "Test_Bootcamper",
+                            RoleId = 1
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.UserSkill", b =>
@@ -593,7 +698,10 @@ namespace LinkedOutApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Rating")
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.Property<int>("SkillId")
@@ -624,21 +732,29 @@ namespace LinkedOutApi.Migrations
 
             modelBuilder.Entity("LinkedOutApi.Entities.MentorAssessment", b =>
                 {
+                    b.HasOne("LinkedOutApi.Entities.User", "Bootcamper")
+                        .WithMany()
+                        .HasForeignKey("BootcamperId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("LinkedOutApi.Entities.User", "Mentor")
+                        .WithMany()
+                        .HasForeignKey("MentorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("LinkedOutApi.Entities.Topic", "Topic")
                         .WithMany()
                         .HasForeignKey("TopicId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LinkedOutApi.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Bootcamper");
+
+                    b.Navigation("Mentor");
 
                     b.Navigation("Topic");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.MentorSkillFeedback", b =>
@@ -730,21 +846,15 @@ namespace LinkedOutApi.Migrations
 
                     b.HasOne("LinkedOutApi.Entities.CV", "CV")
                         .WithMany()
-                        .HasForeignKey("CVId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CVId");
 
                     b.HasOne("LinkedOutApi.Entities.Image", "Image")
                         .WithMany()
-                        .HasForeignKey("ImageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ImageId");
 
                     b.HasOne("LinkedOutApi.Entities.Role", "Role")
                         .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RoleId");
 
                     b.Navigation("Batch");
 

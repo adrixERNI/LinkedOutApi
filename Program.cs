@@ -12,7 +12,15 @@ using LinkedOutApi.Middleware;
 using Amazon;
 using LinkedOutApi.Profiles.UserTraineeProfile;
 using LinkedOutApi.Repositories.TraineeRepository;
+using LinkedOutApi.Profiles;
+using LinkedOutApi.Interfaces.User;
+using LinkedOutApi.Repositories.User;
+using LinkedOutApi.Repositories.Mentor;
 
+using LinkedOutApi.Interfaces.User;
+using LinkedOutApi.Repositories.Mentor;
+using LinkedOutApi.Profiles;
+using LinkedOutApi.Repositories.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +58,10 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(typeof(UserTraineeProfile).Assembly);
 builder.Services.AddScoped<IUserRepository,UserRepository>();
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+
+builder.Services.AddScoped<IMentorAssessmentRepository, MentorAssessmentRepository>();
+builder.Services.AddScoped<IUserSkillRepository, UserSkillRepository>();
 
 builder.Services.AddAuthentication(options =>
 {

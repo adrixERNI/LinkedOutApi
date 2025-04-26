@@ -15,7 +15,7 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
-    public async Task<List<User>> GetAllUserAsync(){
+    public async Task<List<Entities.User>> GetAllUserAsync(){
         return await _context.Users
                 .Include(u => u.Batch)
                 .Include(u => u.Image)
@@ -25,7 +25,7 @@ public class UserRepository : IUserRepository
                 .ToListAsync();
     }
 
-    public async Task<List<User>> GetAllMentorAsync(){
+    public async Task<List<Entities.User>> GetAllMentorAsync(){
         return await _context.Users
                 .Include(u => u.Batch)
                 .Include(u => u.Image)
