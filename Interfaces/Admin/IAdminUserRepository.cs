@@ -2,7 +2,7 @@
 
 namespace LinkedOutApi.Interfaces.Admin
 {
-    public interface IUserRepository
+    public interface IAdminUserRepository
     {
         Task<Entities.User> AddUserToBatchAsync(int batchId, Guid userId);
         Task<Entities.User> DeleteUserFromBatchAsync(int batchId, Guid userId);

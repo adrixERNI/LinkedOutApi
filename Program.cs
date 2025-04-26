@@ -16,11 +16,8 @@ using LinkedOutApi.Profiles;
 using LinkedOutApi.Interfaces.User;
 using LinkedOutApi.Repositories.User;
 using LinkedOutApi.Repositories.Mentor;
+using LinkedOutApi;
 
-using LinkedOutApi.Interfaces.User;
-using LinkedOutApi.Repositories.Mentor;
-using LinkedOutApi.Profiles;
-using LinkedOutApi.Repositories.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,12 +53,10 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
-builder.Services.AddAutoMapper(typeof(UserTraineeProfile).Assembly);
-builder.Services.AddScoped<IUserRepository,UserRepository>();
-builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
-builder.Services.AddScoped<IMentorAssessmentRepository, MentorAssessmentRepository>();
-builder.Services.AddScoped<IUserSkillRepository, UserSkillRepository>();
+builder.Services.AddRepositories();
+builder.Services.AddServices();
+builder.Services.AddMappingProfiles();
 
 builder.Services.AddAuthentication(options =>
 {

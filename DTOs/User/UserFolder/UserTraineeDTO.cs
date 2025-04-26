@@ -9,7 +9,7 @@ public class UserTraineeDTO
 {
     public string Name { get; set; }
     public string Email { get; set; }
-    public BatchDTO Batch { get; set; }
+    public BatchReadDTO Batch { get; set; }
     public string Bio { get; set; }
     //public ImageDTO Image {get; set;}
     //public CvDTO Resume {get; set;}

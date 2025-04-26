@@ -26,10 +26,11 @@ public class UserTraineeProfile : Profile
             //    Name = src.CV.Name,
             //    File = src.CV.File  
             //}))
-          .ForMember(dest => dest.Batch, opt => opt.MapFrom(src => new BatchDTO
+          .ForMember(dest => dest.Batch, opt => opt.MapFrom(src => new BatchReadDTO
             {
                 Name = src.Batch.Name,
-                Status = src.Batch.Status
+                Status = src.Batch.Status,
+                IsDeleted = src.Batch.IsDeleted
             }))
             .ReverseMap();  
     }

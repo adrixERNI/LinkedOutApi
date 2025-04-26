@@ -22,6 +22,7 @@ namespace LinkedOutApi.Controllers.Bootcamper
         [HttpPost("{userId}/skills")]
         public async Task<ActionResult<List<UserSkill>>> AddUserSkill(Guid userId, [FromBody] PostUserSkillDTO dto)
         {
+            // var userSkill = await _userSkillService.AddUserSkill(userId, dto);
             var userSkills = _mapper.Map<List<UserSkill>>(dto.SkillRatings);
 
             foreach (var userSkill in userSkills)
