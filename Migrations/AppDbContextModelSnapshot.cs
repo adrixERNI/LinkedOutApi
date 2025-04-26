@@ -286,12 +286,12 @@ namespace LinkedOutApi.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "User"
+                            Name = "Bootcamper"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Admin"
+                            Name = "Mentor"
                         });
                 });
 
@@ -528,6 +528,10 @@ namespace LinkedOutApi.Migrations
                     b.Property<int>("BatchId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Bio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CVId")
                         .HasColumnType("int");
 
@@ -538,6 +542,10 @@ namespace LinkedOutApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("GoogleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ImageId")
                         .HasColumnType("int");
 
@@ -545,6 +553,10 @@ namespace LinkedOutApi.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

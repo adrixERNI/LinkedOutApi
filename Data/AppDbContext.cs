@@ -46,8 +46,8 @@ namespace LinkedOutApi.Data
             modelBuilder.Entity<Role>(r => 
             {
                 r.HasData(
-                    new Role { Id = 1, Name = "User" },
-                    new Role { Id = 2, Name = "Admin" }
+                    new Role { Id = 1, Name = "Bootcamper" },
+                    new Role { Id = 2, Name = "Mentor" }
                 );
             });
 

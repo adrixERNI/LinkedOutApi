@@ -9,6 +9,10 @@ using LinkedOutApi.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using LinkedOutApi.Middleware;
+using Amazon;
+using LinkedOutApi.Profiles.UserTraineeProfile;
+using LinkedOutApi.Repositories.TraineeRepository;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +48,8 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(UserTraineeProfile).Assembly);
+builder.Services.AddScoped<IUserRepository,UserRepository>();
 
 builder.Services.AddAuthentication(options =>
 {
@@ -95,6 +101,8 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
+
+
 
 var app = builder.Build();
 

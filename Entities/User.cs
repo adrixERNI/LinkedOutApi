@@ -20,6 +20,10 @@ public class User
     public int ImageId { get; set; }
     public int RoleId { get; set; }
     public int CVId { get; set; }
+    public string Bio {get; set;}
+
+    public string Position {get; set;}
+    
 
     public ICollection<UserSkill> UserSkills { get; set; }
 

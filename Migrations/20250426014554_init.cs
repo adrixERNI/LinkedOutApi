@@ -122,12 +122,15 @@ namespace LinkedOutApi.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     IsApproved = table.Column<bool>(type: "bit", nullable: false),
+                    GoogleId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     BatchId = table.Column<int>(type: "int", nullable: false),
                     ImageId = table.Column<int>(type: "int", nullable: false),
                     RoleId = table.Column<int>(type: "int", nullable: false),
-                    CVId = table.Column<int>(type: "int", nullable: false)
+                    CVId = table.Column<int>(type: "int", nullable: false),
+                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Position = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -356,8 +359,40 @@ namespace LinkedOutApi.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "User" },
-                    { 2, "Admin" }
+                    { 1, "Bootcamper" },
+                    { 2, "Mentor" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Skills",
+                columns: new[] { "Id", "CategoryId", "Name" },
+                values: new object[,]
+                {
+                    { 1, 1, "Understanding of Key Concepts" },
+                    { 2, 1, "Ability to Apply Concepts in Practice" },
+                    { 3, 1, "Completion of Assigned Task" },
+                    { 4, 1, "Code Quality" },
+                    { 5, 1, "Use of Best Practices" },
+                    { 6, 1, "Debugging and Troubleshooting" },
+                    { 7, 1, "Velocity" },
+                    { 8, 2, "Participation in Discussions" },
+                    { 9, 2, "Collaboration with Peers" },
+                    { 10, 2, "Ability to Seek Help or Clarify Doubts" },
+                    { 11, 2, "Engagement During the Session" },
+                    { 12, 3, "React" },
+                    { 13, 3, "JavaScript" },
+                    { 14, 3, "C#" },
+                    { 15, 3, "API" },
+                    { 16, 3, "App Security" },
+                    { 17, 3, "Database" },
+                    { 18, 3, "SQL" },
+                    { 19, 3, "AI" },
+                    { 20, 3, "Python" },
+                    { 21, 3, "AWS" },
+                    { 22, 3, "Azure" },
+                    { 23, 3, "Manual Testing" },
+                    { 24, 3, "Automated Testing" },
+                    { 25, 3, "Coding Design Patterns" }
                 });
 
             migrationBuilder.CreateIndex(
