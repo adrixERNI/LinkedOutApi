@@ -62,7 +62,7 @@ public class AuthService : IAuthService
         return googleUser;
     }
 
-    public async Task<User?> CreateUserAsync(string name, string email, string googleId, string role)
+    public async Task<User?> CreateUserAsync(string name, string email, string googleId, int role)
     {
         try
         {
@@ -75,7 +75,7 @@ public class AuthService : IAuthService
             {
                 Name = name,
                 Email = email,
-                //RoleId = guid,
+                RoleId = role,
                 GoogleId = googleId,
                 IsApproved = false
             };

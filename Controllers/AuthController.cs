@@ -45,9 +45,11 @@ public class AuthController : ControllerBase
         if (existingUser == null)
         {
             var imageStream = await _imageService.DownloadImageAsync(userInfo.Picture);
-            var storedUser = await _authService.CreateUserAsync(userInfo.Name, userInfo.Email, userInfo.Id, "trainee");
+            var storedUser = await _authService.CreateUserAsync(userInfo.Name, userInfo.Email, userInfo.Id, 1);
             var fileKey = $"profile-pictures/{storedUser!.Id}.jpg";
-            var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
+            //also  edIT Image table after
+            //does not exist 
+            //var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
         }
 
         var accessToken = await _jwtService.GenerateTokenAsync("1",userInfo.Id, UserRole.Trainee); //userID, googleID, Role

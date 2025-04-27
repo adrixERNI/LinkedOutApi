@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\controllers\\usercontrollerfolder\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:controllers\\usercontrollerfolder\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\dtos\\shared\\topicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:dtos\\shared\\topicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\repositories\\userrepository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:repositories\\userrepository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\repositories\\common\\topicrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:repositories\\common\\topicrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\controllers\\usercontrollerfolder\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:controllers\\usercontrollerfolder\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\repositories\\userrepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,14 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\interfaces\\admin\\ibatchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:interfaces\\admin\\ibatchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\dtos\\shared\\topicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:dtos\\shared\\topicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\repositories\\common\\topicrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:repositories\\common\\topicrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\controllers\\common\\topiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,24 +78,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wFkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T13:22:37.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwDIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T13:18:56.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\UserRepository\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository\\UserRepository.cs",
               "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\UserRepository\\UserRepository.cs",
               "RelativeToolTip": "Repositories\\UserRepository\\UserRepository.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwCUAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T12:54:37.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\UserControllerFolder\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserControllerFolder\\UserController.cs",
+              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\UserControllerFolder\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserControllerFolder\\UserController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAcwEMAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T12:26:58.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "TopicDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\DTOs\\Shared\\TopicDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\Shared\\TopicDTO.cs",
+              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\DTOs\\Shared\\TopicDTO.cs",
+              "RelativeToolTip": "DTOs\\Shared\\TopicDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T06:16:10.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\UserRepository\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository\\IUserRepository.cs",
@@ -100,20 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\UserControllerFolder\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserControllerFolder\\UserController.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\UserControllerFolder\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserControllerFolder\\UserController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAcwEMAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:26:58.64Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "BatchController.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\Admin\\BatchController.cs",
               "RelativeDocumentMoniker": "Controllers\\Admin\\BatchController.cs",
@@ -126,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "IBatchRepository.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Admin\\IBatchRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\Admin\\IBatchRepository.cs",
@@ -139,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "TopicController.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\Common\\TopicController.cs",
               "RelativeDocumentMoniker": "Controllers\\Common\\TopicController.cs",
@@ -152,20 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TopicDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\DTOs\\Shared\\TopicDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\Shared\\TopicDTO.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\DTOs\\Shared\\TopicDTO.cs",
-              "RelativeToolTip": "DTOs\\Shared\\TopicDTO.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T06:16:10.101Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "TopicService.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Services\\Shared\\TopicService.cs",
               "RelativeDocumentMoniker": "Services\\Shared\\TopicService.cs",
@@ -177,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Topic.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Entities\\Topic.cs",
               "RelativeDocumentMoniker": "Entities\\Topic.cs",
@@ -189,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "TopicProfiles.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Profiles\\TopicProfiles.cs",
               "RelativeDocumentMoniker": "Profiles\\TopicProfiles.cs",
@@ -201,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "TopicSkillDTO.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\DTOs\\Shared\\TopicSkillDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Shared\\TopicSkillDTO.cs",
@@ -219,7 +253,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "ITopicRepository.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Common\\ITopicRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\Common\\ITopicRepository.cs",
@@ -231,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "TopicSkill.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Entities\\TopicSkill.cs",
               "RelativeDocumentMoniker": "Entities\\TopicSkill.cs",
@@ -243,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ITopicService.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Common\\ITopicService.cs",
               "RelativeDocumentMoniker": "Interfaces\\Common\\ITopicService.cs",
@@ -256,13 +290,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "TopicRepository.cs",
               "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\Common\\TopicRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Common\\TopicRepository.cs",
               "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\Common\\TopicRepository.cs",
               "RelativeToolTip": "Repositories\\Common\\TopicRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAADYAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T05:56:07.125Z",
               "EditorCaption": ""
