@@ -34,4 +34,15 @@ public class CertificationController:ControllerBase
         return Ok(_mapper.Map<CertificationsAddDTO>(newCert));
 
     }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteCertification([FromRoute] int id){
+        var certification  = await _certRepo.DeleteCertificationAsync(id);
+
+        if(certification == null){
+            return NotFound(new {message = "Certification Not found"});
+        }
+
+        return Ok(new {message = "Certification has been deleted"});
+    }
 }

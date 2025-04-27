@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250427121350_init")]
+    [Migration("20250427130021_init")]
     partial class init
     {
         /// <inheritdoc />

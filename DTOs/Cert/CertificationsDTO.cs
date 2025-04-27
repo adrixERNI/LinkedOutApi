@@ -9,6 +9,6 @@ public class CertificationsAddDTO{
 
     public string CredentialURL {get;set;}
     public Guid UserId { get; set; }
-    public bool IsDeleted { get; set; }
+    // public bool IsDeleted { get; set; }
     public int SkillId {get; set;}
 }
