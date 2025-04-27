@@ -55,6 +55,18 @@ namespace LinkedOutApi.Data
                 .HasForeignKey(ma => ma.BootcamperId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Certification>()
+                .HasOne(c => c.User)
+                .WithMany()
+                .HasForeignKey(c => c.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Certification>()
+                .HasOne(c => c.Skill)
+                .WithMany()
+                .HasForeignKey(c => c.SkillId)
+                .OnDelete(DeleteBehavior.Restrict);
+                
             modelBuilder.Entity<User>(r =>
             {
                 r.HasData(

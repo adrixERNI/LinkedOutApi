@@ -16,4 +16,9 @@ public class SkillRepository : ISkillRepository
     {
         return await _context.Skills.ToListAsync();
     }
+
+    public async Task<bool> SkillExistingAsync(int skillId)
+    {
+          return await _context.Skills.AnyAsync(s => s.Id == skillId);
+    }
 }

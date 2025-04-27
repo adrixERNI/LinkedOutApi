@@ -11,6 +11,9 @@ using LinkedOutApi.Repositories.UserRepostiory;
 using LinkedOutApi.Repositories.Admin;
 using LinkedOutApi.Interfaces.Common;
 using LinkedOutApi.Repositories.Common;
+using LinkedOutApi.Interfaces.Cert;
+using LinkedOutApi.Repositories.Cert;
+using LinkedOutApi.Profiles.UserProfile;
 
 namespace LinkedOutApi
 {
@@ -25,6 +28,7 @@ namespace LinkedOutApi
             services.AddScoped<IBatchRepository, BatchRepository>();
             services.AddScoped<ITopicRepository, TopicRepository>();
             services.AddScoped<ISkillRepository, SkillRepository>();
+            services.AddScoped<ICertificationRepository, CertificationRepository>();
 
             return services;
 
@@ -43,6 +47,8 @@ namespace LinkedOutApi
             services.AddAutoMapper(typeof(UserTraineeProfile).Assembly);
             services.AddAutoMapper(typeof(MappingProfile).Assembly);
             services.AddAutoMapper(typeof(SkillProfile).Assembly);
+            services.AddAutoMapper(typeof(CertificationProfile).Assembly);
+
             return services;
         }
     }

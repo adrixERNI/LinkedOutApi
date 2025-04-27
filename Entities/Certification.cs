@@ -8,17 +8,15 @@
         public string IssuingOrg {get; set;}
         public DateOnly Expiration { get; set; }
 
-        public String CredentialURL {get;set;}
+        public string CredentialURL {get;set;}
         public Guid UserId { get; set; }
         public bool IsDeleted { get; set; }
 
-        public int SkillId {get; set;}
-
-
-
+      
         public User User { get; set; }
 
         public Skill Skill {get; set;}
+        public int SkillId {get; set;}
 
     }
 }
