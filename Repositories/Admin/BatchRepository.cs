@@ -35,7 +35,10 @@ namespace LinkedOutApi.Repositories.Admin
 
         public async Task<Batch> GetBatchByIdAsync(int id)
         {
-            var batch = await _context.Batches.FirstOrDefaultAsync(b => b.Id == id && b.IsDeleted == false);
+            var batch = await _context.Batches
+                .Include(u => u.Users)
+                .Include(t => t.Topics)
+                .FirstOrDefaultAsync(b => b.Id == id && b.IsDeleted == false);
             if (batch == null)
             {
                 throw new KeyNotFoundException("Batch with that Id doesn't exist");
@@ -45,7 +48,10 @@ namespace LinkedOutApi.Repositories.Admin
 
         public async Task<ICollection<Batch>> GetBatchesAsync()
         {
-            var batches = await _context.Batches.Where(b => b.IsDeleted == false).ToListAsync();
+            var batches = await _context.Batches
+                .Include (u => u.Users)
+                .Include(t => t.Topics)
+                .Where(b => b.IsDeleted == false).ToListAsync();
             return batches;
         }
 

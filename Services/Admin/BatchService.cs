@@ -31,26 +31,26 @@ namespace LinkedOutApi.Services.Admin
             return mappedBatch;
         }
 
-        public async Task<BatchReadDTO> GetBatchByIdAsync(int id)
+        public async Task<BatchReadUserTopicDTO> GetBatchByIdAsync(int id)
         {
             var batch = await _batchRepository.GetBatchByIdAsync(id);
-            var mappedBatch = _mapper.Map<BatchReadDTO>(batch);
+            var mappedBatch = _mapper.Map<BatchReadUserTopicDTO>(batch);
             return mappedBatch;
 
         }
 
-        public async Task<ICollection<BatchReadDTO>> GetBatchesAsync()
+        public async Task<ICollection<BatchReadUserTopicDTO>> GetBatchesAsync()
         {
             var batches = await _batchRepository.GetBatchesAsync();
             if (batches == null)
             {
                 return null;
             }
-            var mappedBatches = _mapper.Map<ICollection<BatchReadDTO>>(batches);
+            var mappedBatches = _mapper.Map<ICollection<BatchReadUserTopicDTO>>(batches);
             return mappedBatches;
         }
 
-        public async Task<BatchUpdateDTO> UpdateBatchAsync(int id, BatchUpdateDTO batchDTO)
+        public async Task<BatchReadDTO> UpdateBatchAsync(int id, BatchReadDTO batchDTO)
         {
             if (string.IsNullOrWhiteSpace(batchDTO.Name) || string.IsNullOrWhiteSpace(batchDTO.Status))
             {
@@ -59,7 +59,7 @@ namespace LinkedOutApi.Services.Admin
             var mappedBatch = _mapper.Map<Batch>(batchDTO);
             var batch = await _batchRepository.UpdateBatchAsync(id, mappedBatch);
             
-            return _mapper.Map<BatchUpdateDTO>(batch);
+            return _mapper.Map<BatchReadDTO>(batch);
         }
     }
 }

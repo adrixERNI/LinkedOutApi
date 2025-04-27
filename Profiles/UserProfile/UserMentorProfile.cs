@@ -1,6 +1,7 @@
 using System;
 using AutoMapper;
 using LinkedOutApi.DTOs.User.TraineeFolder;
+using LinkedOutApi.DTOs.User.UserFolder;
 using LinkedOutApi.DTOs.User.UserFolder.BatchFolder;
 using LinkedOutApi.Entities;
 
@@ -22,6 +23,12 @@ public class UserMentorProfile : Profile
             //    Path = src.Image.Path
             //}))
             .ReverseMap();
-            
+
+        CreateMap<User, UserReadDTO>()
+            .ForMember(dest => dest.RoleName, opt => opt.MapFrom(src => src.Role.Name));
+
+        CreateMap<User, UserProfileDTO>()
+            .ForMember(dest => dest.RoleName, opt => opt.MapFrom(src => src.Role.Name));
+
     }
 }

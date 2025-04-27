@@ -818,7 +818,7 @@ namespace LinkedOutApi.Migrations
             modelBuilder.Entity("LinkedOutApi.Entities.Topic", b =>
                 {
                     b.HasOne("LinkedOutApi.Entities.Batch", "Batch")
-                        .WithMany()
+                        .WithMany("Topics")
                         .HasForeignKey("BatchId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -856,7 +856,7 @@ namespace LinkedOutApi.Migrations
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>
                 {
                     b.HasOne("LinkedOutApi.Entities.Batch", "Batch")
-                        .WithMany()
+                        .WithMany("Users")
                         .HasForeignKey("BatchId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -887,6 +887,13 @@ namespace LinkedOutApi.Migrations
                     b.Navigation("Skill");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("LinkedOutApi.Entities.Batch", b =>
+                {
+                    b.Navigation("Topics");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>

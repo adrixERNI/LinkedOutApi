@@ -33,7 +33,7 @@ namespace LinkedOutApi.Data
 
             modelBuilder.Entity<Topic>()
                 .HasOne(t => t.Batch)
-                .WithMany()
+                .WithMany(b => b.Topics)
                 .HasForeignKey(t => t.BatchId)
                 .OnDelete(DeleteBehavior.Restrict);
 

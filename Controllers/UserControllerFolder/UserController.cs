@@ -1,6 +1,7 @@
 using System;
 using AutoMapper;
 using LinkedOutApi.DTOs.User.TraineeFolder;
+using LinkedOutApi.DTOs.User.UserFolder;
 using LinkedOutApi.Repositories.UserRepostiory;
 
 using Microsoft.AspNetCore.Authorization;
@@ -23,7 +24,7 @@ public class UserController : ControllerBase
     }
 
 [HttpGet("trainee")]
-public async Task<IActionResult> GetAll()
+public async Task<ActionResult<UserReadDTO>> GetAll()
 {
         var userTrainee = await _traineeRepo.GetAllUserAsync();
         var userTraineeDto = _mapper.Map<List<UserTraineeDTO>>(userTrainee);

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250426072256_removed cv and image from user")]
-    partial class removedcvandimagefromuser
+    [Migration("20250427042945_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -821,7 +821,7 @@ namespace LinkedOutApi.Migrations
             modelBuilder.Entity("LinkedOutApi.Entities.Topic", b =>
                 {
                     b.HasOne("LinkedOutApi.Entities.Batch", "Batch")
-                        .WithMany()
+                        .WithMany("Topics")
                         .HasForeignKey("BatchId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -859,7 +859,7 @@ namespace LinkedOutApi.Migrations
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>
                 {
                     b.HasOne("LinkedOutApi.Entities.Batch", "Batch")
-                        .WithMany()
+                        .WithMany("Users")
                         .HasForeignKey("BatchId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -890,6 +890,13 @@ namespace LinkedOutApi.Migrations
                     b.Navigation("Skill");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("LinkedOutApi.Entities.Batch", b =>
+                {
+                    b.Navigation("Topics");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>

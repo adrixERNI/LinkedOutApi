@@ -9,8 +9,8 @@ namespace LinkedOutApi.Profiles
         public BatchProfiles() 
         {
             CreateMap<Batch, BatchReadDTO>().ReverseMap();
-            CreateMap<Batch, BatchUpdateDTO>().ReverseMap();
             CreateMap<Batch, BatchCreateDTO>().ReverseMap();
+            CreateMap<Batch, BatchReadUserTopicDTO>().ReverseMap();
         }
     }
 }

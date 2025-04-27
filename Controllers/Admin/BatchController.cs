@@ -51,7 +51,7 @@ namespace LinkedOutApi.Controllers.Admin
         [ProducesResponseType(typeof(SuccessResponseDTO), 201)]
         [ProducesResponseType(typeof(ErrorResponseDTO), 404)]
         [ProducesResponseType(typeof(ErrorResponseDTO), 500)]
-        public async Task<IActionResult> UpdateBatch(int id, BatchUpdateDTO batchUpdateDTO)
+        public async Task<IActionResult> UpdateBatch(int id, BatchReadDTO batchUpdateDTO)
         {
             try
             {
@@ -75,6 +75,49 @@ namespace LinkedOutApi.Controllers.Admin
             catch (Exception ex)
             {
                 return StatusCode(500, new ErrorResponseDTO
+                {
+                    Message = ex.Message,
+                    Success = false,
+                    StatusCode = 500
+                });
+            }
+        }
+
+        [HttpGet("/api/admin/batch/{id}")]
+        [ProducesResponseType(typeof(SuccessResponseDTO), 201)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), 404)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), 500)]
+        public async Task<ActionResult<BatchReadDTO>> GetBatchById(int id)
+        {
+            try
+            {
+                var batch = await _batchService.GetBatchByIdAsync(id);
+                return Ok(batch);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new ErrorResponseDTO
+                {
+                    Message = ex.Message,
+                    Success = false,
+                    StatusCode = 404
+                });
+            }
+        }
+
+        [HttpGet("/api/admin/batches/")]
+        [ProducesResponseType(typeof(SuccessResponseDTO), 201)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), 500)]
+        public async Task<ActionResult<BatchReadUserTopicDTO>> GetAllBatches()
+        {
+            try
+            {
+                var batches = await _batchService.GetBatchesAsync();
+                return Ok(batches);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500,new ErrorResponseDTO
                 {
                     Message = ex.Message,
                     Success = false,
