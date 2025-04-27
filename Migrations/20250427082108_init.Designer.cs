@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250427042945_init")]
+    [Migration("20250427082108_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -158,20 +158,33 @@ namespace LinkedOutApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CredentialURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateOnly>("Expiration")
                         .HasColumnType("date");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("IssuingOrg")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SkillId")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("SkillId");
 
                     b.HasIndex("UserId");
 
@@ -730,11 +743,19 @@ namespace LinkedOutApi.Migrations
 
             modelBuilder.Entity("LinkedOutApi.Entities.Certification", b =>
                 {
+                    b.HasOne("LinkedOutApi.Entities.Skill", "Skill")
+                        .WithMany()
+                        .HasForeignKey("SkillId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("LinkedOutApi.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Skill");
 
                     b.Navigation("User");
                 });
@@ -846,7 +867,7 @@ namespace LinkedOutApi.Migrations
                         .IsRequired();
 
                     b.HasOne("LinkedOutApi.Entities.Topic", "Topic")
-                        .WithMany()
+                        .WithMany("TopicSkill")
                         .HasForeignKey("TopicId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -897,6 +918,11 @@ namespace LinkedOutApi.Migrations
                     b.Navigation("Topics");
 
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("LinkedOutApi.Entities.Topic", b =>
+                {
+                    b.Navigation("TopicSkill");
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>

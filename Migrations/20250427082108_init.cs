@@ -126,14 +126,23 @@ namespace LinkedOutApi.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IssuingOrg = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Expiration = table.Column<DateOnly>(type: "date", nullable: false),
+                    CredentialURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    SkillId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Certifications", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Certifications_Skills_SkillId",
+                        column: x => x.SkillId,
+                        principalTable: "Skills",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Certifications_Users_UserId",
                         column: x => x.UserId,
@@ -443,6 +452,11 @@ namespace LinkedOutApi.Migrations
                     { 1, 1, false, "Frontend Development", new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") },
                     { 2, 1, false, "Backend Development", new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Certifications_SkillId",
+                table: "Certifications",
+                column: "SkillId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Certifications_UserId",

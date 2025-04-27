@@ -10,6 +10,7 @@ using LinkedOutApi.Repositories.User;
 using LinkedOutApi.Repositories.UserRepostiory;
 using LinkedOutApi.Repositories.Admin;
 using LinkedOutApi.Interfaces.Common;
+using LinkedOutApi.Repositories.Common;
 
 namespace LinkedOutApi
 {
@@ -22,7 +23,7 @@ namespace LinkedOutApi
             services.AddScoped<IMentorAssessmentRepository, MentorAssessmentRepository>();
             services.AddScoped<IUserSkillRepository, UserSkillRepository>();
             services.AddScoped<IBatchRepository, BatchRepository>();
-            services.AddScoped<ITopicRepository, ITopicRepository>();
+            services.AddScoped<ITopicRepository, TopicRepository>();
 
             return services;
 
