@@ -24,6 +24,7 @@ namespace LinkedOutApi
             services.AddScoped<IUserSkillRepository, UserSkillRepository>();
             services.AddScoped<IBatchRepository, BatchRepository>();
             services.AddScoped<ITopicRepository, TopicRepository>();
+            services.AddScoped<ISkillRepository, SkillRepository>();
 
             return services;
 
@@ -41,6 +42,7 @@ namespace LinkedOutApi
         {
             services.AddAutoMapper(typeof(UserTraineeProfile).Assembly);
             services.AddAutoMapper(typeof(MappingProfile).Assembly);
+            services.AddAutoMapper(typeof(SkillProfile).Assembly);
             return services;
         }
     }
