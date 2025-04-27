@@ -1,4 +1,5 @@
 using System;
+using LinkedOutApi.DTOs.Shared;
 using LinkedOutApi.Entities;
 
 namespace LinkedOutApi.DTOs.User.UserFolder.BatchFolder;

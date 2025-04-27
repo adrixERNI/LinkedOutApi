@@ -10,5 +10,6 @@
 
         public Batch Batch { get; set; }
         public User User { get; set; }
+        public ICollection<TopicSkill> TopicSkill { get; set; }
     }
 }

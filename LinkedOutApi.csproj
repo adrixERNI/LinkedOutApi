@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\Mentor\" />
-    <Folder Include="Interfaces\Common\" />
   </ItemGroup>
 
 </Project>

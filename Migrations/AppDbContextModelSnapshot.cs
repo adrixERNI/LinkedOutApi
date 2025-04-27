@@ -38,7 +38,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Admins");
+                    b.ToTable("Admins", (string)null);
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Batch", b =>
@@ -62,7 +62,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Batches");
+                    b.ToTable("Batches", (string)null);
 
                     b.HasData(
                         new
@@ -100,7 +100,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("CVs");
+                    b.ToTable("CVs", (string)null);
 
                     b.HasData(
                         new
@@ -127,7 +127,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
@@ -172,7 +172,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Certifications");
+                    b.ToTable("Certifications", (string)null);
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Image", b =>
@@ -201,7 +201,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Images");
+                    b.ToTable("Images", (string)null);
 
                     b.HasData(
                         new
@@ -257,7 +257,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("TopicId");
 
-                    b.ToTable("MentorAssessments");
+                    b.ToTable("MentorAssessments", (string)null);
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.MentorSkillFeedback", b =>
@@ -286,7 +286,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("SkillId");
 
-                    b.ToTable("MentorSkillFeedbacks");
+                    b.ToTable("MentorSkillFeedbacks", (string)null);
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Project", b =>
@@ -323,7 +323,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Projects");
+                    b.ToTable("Projects", (string)null);
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Role", b =>
@@ -340,7 +340,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
 
                     b.HasData(
                         new
@@ -374,7 +374,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Skills");
+                    b.ToTable("Skills", (string)null);
 
                     b.HasData(
                         new
@@ -556,7 +556,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Topics");
+                    b.ToTable("Topics", (string)null);
 
                     b.HasData(
                         new
@@ -600,7 +600,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("TopicId");
 
-                    b.ToTable("TopicSkills");
+                    b.ToTable("TopicSkills", (string)null);
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>
@@ -654,7 +654,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
@@ -711,7 +711,7 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserSkills");
+                    b.ToTable("UserSkills", (string)null);
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.CV", b =>
