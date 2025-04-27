@@ -15,7 +15,7 @@ public class User
     public DateTime? CreatedDate { get; set; }
     public DateTime? UpdatedDate { get; set; }
 
-    public int BatchId { get; set; }
+    public int? BatchId { get; set; }
 
     public string? Bio {get; set;}
 

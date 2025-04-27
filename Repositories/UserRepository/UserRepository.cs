@@ -34,5 +34,44 @@ public class UserRepository : IUserRepository
                 .ToListAsync();
                  
     }
-    
+
+    public async Task<bool> AddUsersToBatch(int batchId, List<Guid> userIds)
+    {
+        var users = await  _context.Users
+            .Where(u => userIds.Contains(u.Id))
+            .ToListAsync();
+
+        if (users.Count != userIds.Count)
+        {
+            return false; // Some users not found
+        }
+
+        foreach (var user in users)
+        {
+            user.BatchId = batchId;
+        }
+
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task<bool> RemoveUsersFromBatch(int batchId, List<Guid> userIds)
+    {
+        var users = await _context.Users
+            .Where(u => userIds.Contains(u.Id))
+            .ToListAsync();
+
+        if (users.Count != userIds.Count)
+        {
+            return false; // Some users not found
+        }
+
+        foreach (var user in users)
+        {
+            user.BatchId = null;
+        }
+
+        await _context.SaveChangesAsync();
+        return true;
+    }
 }

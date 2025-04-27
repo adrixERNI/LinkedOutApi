@@ -8,4 +8,7 @@ public interface IUserRepository
     Task<List<Entities.User>> GetAllUserAsync();
     Task<List<Entities.User>> GetAllMentorAsync();
 
+    Task<bool> AddUsersToBatch(int batchId, List<Guid> userIds);
+    Task<bool> RemoveUsersFromBatch(int batchId, List<Guid> userIds);
+
 }
