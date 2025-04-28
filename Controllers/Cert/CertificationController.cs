@@ -24,7 +24,7 @@ public class CertificationController:ControllerBase
 
     }
 
-    [HttpPost]
+    [HttpPost("trainee")]
     public async Task<IActionResult> AddCertification([FromBody] CertificationsAddDTO createCertDTO){
         if(!await _skillRepo.SkillExistingAsync(createCertDTO.SkillId)){
             return NotFound(new {message = "Skill not found"});
@@ -33,6 +33,22 @@ public class CertificationController:ControllerBase
         var newCert = await _certRepo.CreateAsync(cert);
         return Ok(_mapper.Map<CertificationsAddDTO>(newCert));
 
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateCertification([FromRoute] int id, [FromBody] CertificationUpdateDTO certUpdateDTO){
+        if(!await _skillRepo.SkillExistingAsync(certUpdateDTO.SkillId)){
+            return NotFound(new {message = "Skill not found"});
+        }
+        var cert = await _certRepo.UpdateCertificationAsync(id, certUpdateDTO);
+        if(cert == null){
+            return NotFound(new {message = "Certification not Found"});
+        }
+
+        var responseDto = _mapper.Map<CertificationResponseDTO>(cert);
+
+    return Ok(responseDto);
+       
     }
 
     [HttpDelete("{id}")]
