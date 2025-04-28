@@ -3,6 +3,8 @@ using LinkedOutApi.Data;
 using Microsoft.EntityFrameworkCore;
 using LinkedOutApi.Interfaces.Cert;
 using LinkedOutApi.Entities;
+using LinkedOutApi.DTOs.Certifications;
+using AutoMapper;
 
 
 namespace LinkedOutApi.Repositories.Cert;
@@ -10,10 +12,12 @@ namespace LinkedOutApi.Repositories.Cert;
 public class CertificationRepository : ICertificationRepository
 {
     private readonly AppDbContext _context;
+    private readonly IMapper _mapper;
 
 
-    public CertificationRepository(AppDbContext context){
+    public CertificationRepository(AppDbContext context, IMapper mapper){
         _context = context;
+        _mapper = mapper;
    
     }
     public async Task<Entities.Certification> CreateAsync(Entities.Certification certification)
@@ -30,6 +34,18 @@ public class CertificationRepository : ICertificationRepository
             return null;
         }
         _context.Certifications.Remove(existingCert);
+        await _context.SaveChangesAsync();
+        return existingCert;
+
+    }
+
+    public async Task<Certification> UpdateCertificationAsync(int id, CertificationUpdateDTO cert)
+    {
+        var existingCert = await _context.Certifications.FirstOrDefaultAsync(c => c.Id==id);
+        if(existingCert == null){
+            return null;
+        }
+        _mapper.Map(cert, existingCert);
         await _context.SaveChangesAsync();
         return existingCert;
 

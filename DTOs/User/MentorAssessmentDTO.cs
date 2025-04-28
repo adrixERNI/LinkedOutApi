@@ -1,5 +1,10 @@
 ﻿namespace LinkedOutApi.DTOs.User
 {
+    public class MentorAssessmentDTO
+    {
+        public int Id { get; set; }
+        public List<MentorSkillFeedbackDTO> SkillFeedbackDTOs { get; set; }
+    }
     public class CreateAssessmentDTO
     {
         public Guid MentorId { get; set; }
@@ -9,4 +14,5 @@
         public string? Comments { get; set; }
         public string? Tags { get; set; }
     }
+
 }

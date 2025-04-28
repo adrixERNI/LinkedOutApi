@@ -30,7 +30,7 @@ namespace LinkedOutApi.Repositories.User
             var selfRating = await _context.UserSkills.FindAsync(id);
             if (selfRating == null)
             {
-                throw new ArgumentNullException("Id does not exist"); // throw exception here maybe?
+                throw new KeyNotFoundException("Id does not exist"); // throw exception here maybe?
             }
             selfRating.IsDeleted = true;
             await _context.SaveChangesAsync();

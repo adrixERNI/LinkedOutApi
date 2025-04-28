@@ -155,10 +155,6 @@ namespace LinkedOutApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CredentialURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateOnly>("Expiration")
                         .HasColumnType("date");
 
@@ -287,7 +283,7 @@ namespace LinkedOutApi.Migrations
                     b.Property<int>("MentorAssessmentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Rating")
+                    b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.Property<int>("SkillId")

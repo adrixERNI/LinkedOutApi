@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250427130021_init")]
-    partial class init
+    [Migration("20250428025609_MentorSkillFeedback")]
+    partial class MentorSkillFeedback
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -290,7 +290,7 @@ namespace LinkedOutApi.Migrations
                     b.Property<int>("MentorAssessmentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Rating")
+                    b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.Property<int>("SkillId")
@@ -625,7 +625,7 @@ namespace LinkedOutApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("BatchId")
+                    b.Property<int?>("BatchId")
                         .HasColumnType("int");
 
                     b.Property<string>("Bio")
@@ -881,9 +881,7 @@ namespace LinkedOutApi.Migrations
                 {
                     b.HasOne("LinkedOutApi.Entities.Batch", "Batch")
                         .WithMany("Users")
-                        .HasForeignKey("BatchId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BatchId");
 
                     b.HasOne("LinkedOutApi.Entities.Role", "Role")
                         .WithMany()

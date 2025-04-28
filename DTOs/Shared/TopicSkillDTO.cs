@@ -9,6 +9,7 @@ namespace LinkedOutApi.DTOs.Shared
         public int TopicId { get; set; }
         public int SkillId { get; set; }
         public bool IsDeleted { get; set; }
-        public Skill Skill { get; set; }
+
+        public string SkillName { get; set; }
     }
 }
