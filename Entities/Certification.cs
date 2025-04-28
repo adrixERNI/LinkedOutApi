@@ -8,7 +8,6 @@
         public string IssuingOrg {get; set;}
         public DateOnly Expiration { get; set; }
 
-        public string CredentialURL {get;set;}
         public Guid UserId { get; set; }
         public bool IsDeleted { get; set; }
 

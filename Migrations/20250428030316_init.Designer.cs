@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250427130021_init")]
+    [Migration("20250428030316_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -157,10 +157,6 @@ namespace LinkedOutApi.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CredentialURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateOnly>("Expiration")
                         .HasColumnType("date");
@@ -625,7 +621,7 @@ namespace LinkedOutApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("BatchId")
+                    b.Property<int?>("BatchId")
                         .HasColumnType("int");
 
                     b.Property<string>("Bio")
@@ -881,9 +877,7 @@ namespace LinkedOutApi.Migrations
                 {
                     b.HasOne("LinkedOutApi.Entities.Batch", "Batch")
                         .WithMany("Users")
-                        .HasForeignKey("BatchId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BatchId");
 
                     b.HasOne("LinkedOutApi.Entities.Role", "Role")
                         .WithMany()

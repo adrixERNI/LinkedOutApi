@@ -1,74 +1,86 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\",
+  "WorkspaceRootPath": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\dtos\\shared\\topicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:dtos\\shared\\topicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\repositories\\userrepository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:repositories\\userrepository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\dtos\\auth\\googleuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:dtos\\auth\\googleuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\repositories\\common\\topicrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\repositories\\common\\topicrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:repositories\\common\\topicrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\controllers\\usercontrollerfolder\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:controllers\\usercontrollerfolder\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\repositories\\userrepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:repositories\\userrepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\controllers\\admin\\batchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:controllers\\admin\\batchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\interfaces\\admin\\ibatchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:interfaces\\admin\\ibatchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\controllers\\common\\topiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:controllers\\common\\topiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\interfaces\\common\\itopicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:interfaces\\common\\itopicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\services\\shared\\topicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:services\\shared\\topicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\profiles\\topicprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\profiles\\topicprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:profiles\\topicprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\entities\\topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:entities\\topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\dtos\\shared\\topicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:dtos\\shared\\topicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\dtos\\shared\\topicskilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\dtos\\shared\\topicskilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:dtos\\shared\\topicskilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\interfaces\\common\\itopicrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\entities\\topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:entities\\topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\entities\\topicskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:entities\\topicskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\controllers\\common\\topiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:controllers\\common\\topiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\services\\shared\\topicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:services\\shared\\topicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\controllers\\admin\\batchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:controllers\\admin\\batchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\interfaces\\common\\itopicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:interfaces\\common\\itopicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\interfaces\\common\\itopicrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:interfaces\\common\\itopicrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\kaz\\source\\capstone\\linkedoutapi\\entities\\topicskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:entities\\topicskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\repositories\\userrepository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:repositories\\userrepository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\controllers\\usercontrollerfolder\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:controllers\\usercontrollerfolder\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\repositories\\userrepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:repositories\\userrepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\interfaces\\admin\\ibatchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi.csproj|solutionrelative:interfaces\\admin\\ibatchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,17 +90,88 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 12,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GoogleUserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\DTOs\\Auth\\GoogleUserDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\Auth\\GoogleUserDTO.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\DTOs\\Auth\\GoogleUserDTO.cs",
+              "RelativeToolTip": "DTOs\\Auth\\GoogleUserDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T06:28:42.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T06:24:09.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\DependencyInjection.cs",
+              "RelativeToolTip": "DependencyInjection.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwDUAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T05:52:23.03Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Services\\AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Services\\AuthService.cs",
               "RelativeToolTip": "Services\\AuthService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA1wFkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAYwE0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T13:22:37.318Z",
               "EditorCaption": ""
@@ -97,208 +180,214 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwDIAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAkwHIAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T13:18:56.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\UserRepository\\UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Repositories\\UserRepository\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\UserRepository\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Repositories\\UserRepository\\UserRepository.cs",
               "RelativeToolTip": "Repositories\\UserRepository\\UserRepository.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAwwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:54:37.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T12:54:37.035Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 17,
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\UserControllerFolder\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Controllers\\UserControllerFolder\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserControllerFolder\\UserController.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\UserControllerFolder\\UserController.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Controllers\\UserControllerFolder\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserControllerFolder\\UserController.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAcwEMAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:26:58.64Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T12:26:58.64Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "TopicDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\DTOs\\Shared\\TopicDTO.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\DTOs\\Shared\\TopicDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Shared\\TopicDTO.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\DTOs\\Shared\\TopicDTO.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\DTOs\\Shared\\TopicDTO.cs",
               "RelativeToolTip": "DTOs\\Shared\\TopicDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T06:16:10.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 18,
               "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\UserRepository\\IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Repositories\\UserRepository\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\UserRepository\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Repositories\\UserRepository\\IUserRepository.cs",
               "RelativeToolTip": "Repositories\\UserRepository\\IUserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:33:42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T12:33:42Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BatchController.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\Admin\\BatchController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Admin\\BatchController.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\Admin\\BatchController.cs",
-              "RelativeToolTip": "Controllers\\Admin\\BatchController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T06:47:15.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 19,
               "Title": "IBatchRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Admin\\IBatchRepository.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Interfaces\\Admin\\IBatchRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\Admin\\IBatchRepository.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Admin\\IBatchRepository.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Interfaces\\Admin\\IBatchRepository.cs",
               "RelativeToolTip": "Interfaces\\Admin\\IBatchRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:33:09.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T12:33:09.497Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "TopicController.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\Common\\TopicController.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Controllers\\Common\\TopicController.cs",
               "RelativeDocumentMoniker": "Controllers\\Common\\TopicController.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Controllers\\Common\\TopicController.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Controllers\\Common\\TopicController.cs",
               "RelativeToolTip": "Controllers\\Common\\TopicController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAuwJ4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T06:47:03.811Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TopicService.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Services\\Shared\\TopicService.cs",
-              "RelativeDocumentMoniker": "Services\\Shared\\TopicService.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Services\\Shared\\TopicService.cs",
-              "RelativeToolTip": "Services\\Shared\\TopicService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwDMAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T06:33:11.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Topic.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Entities\\Topic.cs",
-              "RelativeDocumentMoniker": "Entities\\Topic.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Entities\\Topic.cs",
-              "RelativeToolTip": "Entities\\Topic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T05:38:28.531Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 5,
               "Title": "TopicProfiles.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Profiles\\TopicProfiles.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Profiles\\TopicProfiles.cs",
               "RelativeDocumentMoniker": "Profiles\\TopicProfiles.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Profiles\\TopicProfiles.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Profiles\\TopicProfiles.cs",
               "RelativeToolTip": "Profiles\\TopicProfiles.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T06:34:52.427Z"
+              "WhenOpened": "2025-04-27T06:34:52.427Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 7,
               "Title": "TopicSkillDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\DTOs\\Shared\\TopicSkillDTO.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\DTOs\\Shared\\TopicSkillDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\Shared\\TopicSkillDTO.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\DTOs\\Shared\\TopicSkillDTO.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\DTOs\\Shared\\TopicSkillDTO.cs",
               "RelativeToolTip": "DTOs\\Shared\\TopicSkillDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T06:16:48.236Z"
+              "WhenOpened": "2025-04-27T06:16:48.236Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BatchController.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Controllers\\Admin\\BatchController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Admin\\BatchController.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Controllers\\Admin\\BatchController.cs",
+              "RelativeToolTip": "Controllers\\Admin\\BatchController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwBgAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T06:47:15.41Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "ITopicRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Common\\ITopicRepository.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Interfaces\\Common\\ITopicRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\Common\\ITopicRepository.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Common\\ITopicRepository.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Interfaces\\Common\\ITopicRepository.cs",
               "RelativeToolTip": "Interfaces\\Common\\ITopicRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T05:35:03.398Z"
+              "WhenOpened": "2025-04-27T05:35:03.398Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 9,
               "Title": "TopicSkill.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Entities\\TopicSkill.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Entities\\TopicSkill.cs",
               "RelativeDocumentMoniker": "Entities\\TopicSkill.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Entities\\TopicSkill.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Entities\\TopicSkill.cs",
               "RelativeToolTip": "Entities\\TopicSkill.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T05:55:24.038Z"
+              "WhenOpened": "2025-04-27T05:55:24.038Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "ITopicService.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Common\\ITopicService.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Interfaces\\Common\\ITopicService.cs",
               "RelativeDocumentMoniker": "Interfaces\\Common\\ITopicService.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Common\\ITopicService.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Interfaces\\Common\\ITopicService.cs",
               "RelativeToolTip": "Interfaces\\Common\\ITopicService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T06:13:30.234Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Topic.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Entities\\Topic.cs",
+              "RelativeDocumentMoniker": "Entities\\Topic.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Entities\\Topic.cs",
+              "RelativeToolTip": "Entities\\Topic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T05:38:28.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
               "Title": "TopicRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\Common\\TopicRepository.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Repositories\\Common\\TopicRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Common\\TopicRepository.cs",
-              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\Common\\TopicRepository.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Repositories\\Common\\TopicRepository.cs",
               "RelativeToolTip": "Repositories\\Common\\TopicRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwD8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T05:56:07.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TopicService.cs",
+              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Services\\Shared\\TopicService.cs",
+              "RelativeDocumentMoniker": "Services\\Shared\\TopicService.cs",
+              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Services\\Shared\\TopicService.cs",
+              "RelativeToolTip": "Services\\Shared\\TopicService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwDEAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T06:33:11.584Z",
               "EditorCaption": ""
             }
           ]

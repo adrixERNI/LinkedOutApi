@@ -9,5 +9,8 @@ public class CertificationProfile:Profile
 {
     public CertificationProfile(){
         CreateMap<Certification,CertificationsAddDTO>().ReverseMap();
+        CreateMap<Certification,CertificationUpdateDTO>().ReverseMap();
+
+        CreateMap<Certification,CertificationResponseDTO>().ReverseMap();
     }
 }

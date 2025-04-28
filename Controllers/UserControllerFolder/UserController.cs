@@ -25,21 +25,40 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("trainee")]
+     [ProducesResponseType(typeof(SuccessResponseDTO), 200)]
+    [ProducesResponseType(typeof(ErrorResponseDTO), 500)]
     public async Task<ActionResult<UserReadDTO>> GetAll()
     {
+        try{
             var userTrainee = await _traineeRepo.GetAllUserAsync();
             var userTraineeDto = _mapper.Map<List<UserTraineeDTO>>(userTrainee);
 
             return Ok(userTraineeDto);
+
+        }catch(Exception ex){
+            return StatusCode(500, new ErrorResponseDTO{
+                Message = ex.Message,
+                Success = false,
+                StatusCode = 500
+            });
+        }
     
     }
 
     [HttpGet("mentor")]
     public async Task<IActionResult> GetAllMentor(){
-        var userMentor = await _traineeRepo.GetAllMentorAsync();
-        var userMentorDTO = _mapper.Map<List<UserMentorDTO>>(userMentor);
+        try{
+            var userMentor = await _traineeRepo.GetAllMentorAsync();
+            var userMentorDTO = _mapper.Map<List<UserMentorDTO>>(userMentor);
 
         return Ok(userMentorDTO);
+        }catch(Exception ex){
+            return StatusCode(500, new ErrorResponseDTO{
+                Message = ex.Message,
+                Success = false,
+                StatusCode = 500
+            });
+        }
     }
 
     [HttpPost("/api/admin/batch/{batchId}/add/user")]
