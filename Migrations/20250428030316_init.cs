@@ -128,7 +128,6 @@ namespace LinkedOutApi.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IssuingOrg = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Expiration = table.Column<DateOnly>(type: "date", nullable: false),
-                    CredentialURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     SkillId = table.Column<int>(type: "int", nullable: false)
