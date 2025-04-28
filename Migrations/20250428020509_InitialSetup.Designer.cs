@@ -4,6 +4,7 @@ using LinkedOutApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250428020509_InitialSetup")]
+    partial class InitialSetup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -317,7 +320,12 @@ namespace LinkedOutApi.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<string>("RepoLink")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("TechUsed")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -332,17 +340,6 @@ namespace LinkedOutApi.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Projects");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Description of Project 1",
-                            IsDeleted = false,
-                            TechUsed = "HTML, CSS, JavaScript",
-                            Title = "Project 1",
-                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
-                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Role", b =>
@@ -823,9 +820,9 @@ namespace LinkedOutApi.Migrations
             modelBuilder.Entity("LinkedOutApi.Entities.Project", b =>
                 {
                     b.HasOne("LinkedOutApi.Entities.User", "User")
-                        .WithMany("Projects")
+                        .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
@@ -928,8 +925,6 @@ namespace LinkedOutApi.Migrations
 
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>
                 {
-                    b.Navigation("Projects");
-
                     b.Navigation("UserSkills");
                 });
 #pragma warning restore 612, 618

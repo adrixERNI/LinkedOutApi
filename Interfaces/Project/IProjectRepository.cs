@@ -1,0 +1,13 @@
+using LinkedOutApi.Entities;
+
+namespace LinkedOutApi.Interfaces
+{
+    public interface IProjectRepository
+    {
+        Task<List<Project>> GetAllProjects();
+        Task<Project> GetProjectById(int id);
+        Task AddAsync(Project project);
+        Task UpdateAsync(Project project);
+        Task DeleteAsync(int id);
+    }
+}

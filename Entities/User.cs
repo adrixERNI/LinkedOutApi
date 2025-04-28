@@ -28,4 +28,6 @@ public class User
 
     public Batch Batch { get; set; }
     public Role Role { get; set; }
+
+    public ICollection<Project> Projects { get; set; } = new List<Project>();
 }

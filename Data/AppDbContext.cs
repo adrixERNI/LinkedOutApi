@@ -66,6 +66,12 @@ namespace LinkedOutApi.Data
                 .WithMany()
                 .HasForeignKey(c => c.SkillId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Project>()
+                .HasOne(p => p.User)
+                .WithMany(u => u.Projects)
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
                 
             modelBuilder.Entity<User>(r =>
             {
@@ -208,7 +214,17 @@ namespace LinkedOutApi.Data
                 );
             });
 
-           
+            modelBuilder.Entity<Project> (r =>
+            {
+                r.HasData(
+                    new Project { Id = 1,
+                    Title = "Project 1", 
+                    Description = "Description of Project 1", 
+                    UserId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4"),
+                    TechUsed = "HTML, CSS, JavaScript"
+                    }
+                );
+            });
         }
     }
 }
