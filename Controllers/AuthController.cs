@@ -53,7 +53,7 @@ public class AuthController : ControllerBase
             var fileKey = $"profile-pictures/{storedUser!.Id}.jpg";
             //also  edIT Image table after
             //does not exist 
-            //var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
+            var pictureUrl = await _awsService.UploadImageToS3Async(imageStream, fileKey);
         }
         else
         {
