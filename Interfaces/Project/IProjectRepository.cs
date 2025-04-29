@@ -6,7 +6,7 @@ namespace LinkedOutApi.Interfaces
     {
         Task<List<Project>> GetAllProjects();
         Task<Project> GetProjectById(int id);
-        Task AddAsync(Project project);
+        Task<int> AddAsync(Project project);
         Task UpdateAsync(Project project);
         Task DeleteAsync(int id);
     }

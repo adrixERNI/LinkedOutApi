@@ -72,6 +72,12 @@ namespace LinkedOutApi.Data
                 .WithMany(u => u.Projects)
                 .HasForeignKey(p => p.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
+            
+            modelBuilder.Entity<CV>()
+                .HasOne(c => c.User)
+                .WithMany(u => u.CVs)
+                .HasForeignKey(c => c.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
                 
             modelBuilder.Entity<User>(r =>
             {

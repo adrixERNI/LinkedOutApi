@@ -24,10 +24,11 @@ namespace LinkedOutApi.Entities
             return await _context.Projects.FindAsync(id);
         }
 
-        public async Task AddAsync(Project project)
+        public async Task<int> AddAsync(Project project)
         {
             await _context.Projects.AddAsync(project);
             await _context.SaveChangesAsync();
+            return project.Id;
         }
 
         public async Task UpdateAsync(Project project)

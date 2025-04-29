@@ -30,4 +30,5 @@ public class User
     public Role Role { get; set; }
 
     public ICollection<Project> Projects { get; set; } = new List<Project>();
+    public ICollection<CV> CVs { get; set; } = new List<CV>();
 }

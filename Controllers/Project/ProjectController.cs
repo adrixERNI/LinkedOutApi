@@ -4,6 +4,7 @@ using LinkedOutApi.DTOs.Projects;
 using LinkedOutApi.Interfaces;
 using LinkedOutApi.Profiles;
 using Microsoft.AspNetCore.Authorization;
+using LinkedOutApi.Entities;
 namespace LinkedOutApi.Controllers
 {
     [Route("api/[controller]")]
@@ -41,7 +42,9 @@ namespace LinkedOutApi.Controllers
             return Ok(project.ToGetProjectsDto());
         }
 
+        
         [HttpPost]
+        [Authorize(Policy="TraineePolicy")]
         public async Task<IActionResult> Create([FromBody] CreateProjects projectDto)
         {
             var projectModel = projectDto.ToProjectFromCreateDto();

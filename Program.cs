@@ -9,13 +9,7 @@ using LinkedOutApi.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using LinkedOutApi.Middleware;
-using Amazon;
-using LinkedOutApi.Profiles.UserTraineeProfile;
-using LinkedOutApi.Repositories.UserRepostiory;
-using LinkedOutApi.Profiles;
-using LinkedOutApi.Interfaces.User;
-using LinkedOutApi.Repositories.User;
-using LinkedOutApi.Repositories.Mentor;
+
 using LinkedOutApi;
 
 

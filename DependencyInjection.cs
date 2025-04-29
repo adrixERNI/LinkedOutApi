@@ -16,6 +16,7 @@ using LinkedOutApi.Repositories.Cert;
 using LinkedOutApi.Profiles.UserProfile;
 using LinkedOutApi.Services.Shared;
 using LinkedOutApi.Entities;
+using LinkedOutApi.Repositories;
 
 namespace LinkedOutApi
 {
@@ -33,6 +34,7 @@ namespace LinkedOutApi
             services.AddScoped<ICertificationRepository, CertificationRepository>();
             services.AddScoped<ITopicRepository, TopicRepository>();
             services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<ICVRepository, CVRepository>();
 
             return services;
 
