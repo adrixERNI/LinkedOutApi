@@ -35,14 +35,28 @@ public class JwtService : IJwtService
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secret));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-        var token = new JwtSecurityToken(
-            issuer: _issuer,
-            audience: _audience,
-            claims: claims,
-            expires: DateTime.Now.AddMinutes(60),
-            signingCredentials: creds);
+        //var token = new JwtSecurityToken(
+        //    issuer: _issuer,
+        //    audience: _audience,
+        //    claims: claims,
+        //    expires: DateTime.Now.AddMinutes(60),
+        //    signingCredentials: creds);
 
-        return await Task.FromResult(new JwtSecurityTokenHandler().WriteToken(token));
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(claims),
+            Expires = DateTime.UtcNow.AddHours(1),
+            SigningCredentials = creds,
+            Issuer = _issuer,
+            Audience = _audience
+        };
+
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+        var tokenString = tokenHandler.WriteToken(token);
+        Console.WriteLine(ValidateToken(tokenString));
+        return tokenString;
+        //return await Task.FromResult(new JwtSecurityTokenHandler().WriteToken(token));
     }
 
     public ClaimsPrincipal ValidateToken(string token)
@@ -68,6 +82,7 @@ public class JwtService : IJwtService
         }
         catch
         {
+            Console.WriteLine("Somethingwentwrong");
             return null!;
         }
     }

@@ -12,8 +12,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
+<<<<<<<< HEAD:Migrations/20250428025609_MentorSkillFeedback.Designer.cs
+    [Migration("20250428025609_MentorSkillFeedback")]
+    partial class MentorSkillFeedback
+========
     [Migration("20250428030316_init")]
     partial class init
+>>>>>>>> 6666f8dd6e7f04640748d29c5071a065fe40acbc:Migrations/20250428030316_init.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -286,7 +291,7 @@ namespace LinkedOutApi.Migrations
                     b.Property<int>("MentorAssessmentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Rating")
+                    b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.Property<int>("SkillId")
