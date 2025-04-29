@@ -31,6 +31,7 @@ namespace LinkedOutApi
             services.AddScoped<IBatchRepository, BatchRepository>();
             services.AddScoped<ITopicRepository, TopicRepository>();
             services.AddScoped<ISkillRepository, SkillRepository>();
+            services.AddScoped<IMentorSkillFeedbackRepository, MentorSkillFeedbackRepository>();
             services.AddScoped<ICertificationRepository, CertificationRepository>();
             services.AddScoped<ITopicRepository, TopicRepository>();
             services.AddScoped<IProjectRepository, ProjectRepository>();

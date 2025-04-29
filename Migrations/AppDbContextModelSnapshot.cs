@@ -281,7 +281,7 @@ namespace LinkedOutApi.Migrations
                     b.Property<int>("MentorAssessmentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Rating")
+                    b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.Property<int>("SkillId")

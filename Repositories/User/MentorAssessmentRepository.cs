@@ -9,19 +9,28 @@ namespace LinkedOutApi.Repositories.Mentor
     public class MentorAssessmentRepository : IMentorAssessmentRepository
     {
         private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
 
-        public MentorAssessmentRepository(AppDbContext context, IMapper mapper)
+        public MentorAssessmentRepository(AppDbContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
         public async Task<MentorAssessment> AddMentorAssessment(MentorAssessment mentorAssessment)
         {
             mentorAssessment.CreatedAt = DateTime.Now;
             mentorAssessment.IsDeleted = false;
-            _context.Add(mentorAssessment);
+            await _context.MentorAssessments.AddAsync(mentorAssessment);
             await _context.SaveChangesAsync();
+
+            if (mentorAssessment.MentorSkillFeedbacks != null && mentorAssessment.MentorSkillFeedbacks.Any())
+            {
+                foreach (var feedback in mentorAssessment.MentorSkillFeedbacks)
+                {
+                    feedback.MentorAssessmentId = mentorAssessment.Id;
+                    await _context.MentorSkillFeedbacks.AddAsync(feedback);
+                }
+                await _context.SaveChangesAsync();
+            }
+
             return mentorAssessment;    
         }
 
@@ -45,7 +54,10 @@ namespace LinkedOutApi.Repositories.Mentor
 
         public async Task<MentorAssessment> GetMentorAssessmentById(int id)
         {
-            var getAssessment = await _context.MentorAssessments.FirstOrDefaultAsync(a => a.Id == id);
+            var getAssessment = await _context.MentorAssessments
+                .Include(m => m.MentorSkillFeedbacks)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
             return getAssessment;
         }
 

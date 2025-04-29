@@ -23,9 +23,14 @@ namespace LinkedOutApi.Controllers.User
         public async Task<ActionResult<CreateAssessmentDTO>> AddMentorAssessment(CreateAssessmentDTO assessmentDTO)
         {
             var mapAssessment = _mapper.Map<MentorAssessment>(assessmentDTO);
+
             var newAssessment = await _mentorAssessmentRepository.AddMentorAssessment(mapAssessment);
-            return Ok(_mapper.Map<CreateAssessmentDTO>(newAssessment));
+
+            var result = _mapper.Map<CreateAssessmentDTO>(newAssessment);
+
+            return Ok(result);
         }
+
         [HttpDelete("{id}")]
         public async Task<ActionResult<CreateAssessmentDTO>> DeleteMentorAssessment(int id)
         {
@@ -46,7 +51,8 @@ namespace LinkedOutApi.Controllers.User
         public async Task<ActionResult<CreateAssessmentDTO>> GetMentorAssessmentById(int id)
         {
             var getAssessment = await _mentorAssessmentRepository.GetMentorAssessmentById(id);
-            return Ok(getAssessment);
+            var mapAssessment = _mapper.Map<CreateAssessmentDTO>(getAssessment);
+            return Ok(mapAssessment);
         }
         
     }

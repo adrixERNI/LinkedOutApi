@@ -3,6 +3,7 @@ using LinkedOutApi.DTOs.Response;
 using LinkedOutApi.Entities;
 using LinkedOutApi.Interfaces;
 using LinkedOutApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -97,6 +98,7 @@ public class AuthController : ControllerBase
     //     return Ok(new { name = "Rodel" });
     // }
 
+    [Authorize]
     [HttpGet("test")]
     public IActionResult GetUserDetailsForTrainee()
     {
