@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-<<<<<<<< HEAD:Migrations/20250428025609_MentorSkillFeedback.Designer.cs
-    [Migration("20250428025609_MentorSkillFeedback")]
-    partial class MentorSkillFeedback
-========
-    [Migration("20250428030316_init")]
-    partial class init
->>>>>>>> 6666f8dd6e7f04640748d29c5071a065fe40acbc:Migrations/20250428030316_init.Designer.cs
+    [Migration("20250428063452_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -163,6 +158,10 @@ namespace LinkedOutApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CredentialURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateOnly>("Expiration")
                         .HasColumnType("date");
 
@@ -291,7 +290,7 @@ namespace LinkedOutApi.Migrations
                     b.Property<int>("MentorAssessmentId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Rating")
+                    b.Property<int>("Rating")
                         .HasColumnType("int");
 
                     b.Property<int>("SkillId")
@@ -321,12 +320,7 @@ namespace LinkedOutApi.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("RepoLink")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("TechUsed")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -341,6 +335,17 @@ namespace LinkedOutApi.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Projects");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Description of Project 1",
+                            IsDeleted = false,
+                            TechUsed = "HTML, CSS, JavaScript",
+                            Title = "Project 1",
+                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Role", b =>
@@ -821,9 +826,9 @@ namespace LinkedOutApi.Migrations
             modelBuilder.Entity("LinkedOutApi.Entities.Project", b =>
                 {
                     b.HasOne("LinkedOutApi.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Projects")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("User");
@@ -926,6 +931,8 @@ namespace LinkedOutApi.Migrations
 
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>
                 {
+                    b.Navigation("Projects");
+
                     b.Navigation("UserSkills");
                 });
 #pragma warning restore 612, 618

@@ -10,6 +10,7 @@ namespace LinkedOutApi.Profiles
         {
             CreateMap<CreateAssessmentDTO, MentorAssessment>().ReverseMap();
 
+
             CreateMap<PostUserSkillDTO, UserSkill>().ReverseMap();
 
             CreateMap<UserSkillDTO, UserSkill>()
@@ -19,6 +20,18 @@ namespace LinkedOutApi.Profiles
 
             CreateMap<UserSkill, GetUserSkillDTO>()
                 .ForMember(dest => dest.SkillName, opt => opt.MapFrom(src => src.Skill.Name));
+
+
+            CreateMap<PostSkillFeedbackDTO, MentorSkillFeedback>().ReverseMap();
+
+            CreateMap<MentorSkillFeedbackDTO, MentorSkillFeedback>()
+                .ForMember(dest => dest.MentorAssessmentId, opt => opt.Ignore());
+
+            CreateMap<MentorSkillFeedback, MentorSkillFeedbackDTO>().ReverseMap();
+
+            CreateMap<MentorSkillFeedback, GetSkillFeedbackDTO>()
+                .ForMember(dest => dest.SkillName, opt => opt.MapFrom(src => src.Skill.Name));
+
         }
     }
 }

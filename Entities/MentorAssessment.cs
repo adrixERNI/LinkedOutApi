@@ -18,5 +18,7 @@
         public User Mentor { get; set; }
         public User Bootcamper { get; set; }
         public Topic Topic { get; set; }
+
+        public ICollection<MentorSkillFeedback> MentorSkillFeedbacks { get; set; }
     }
 }

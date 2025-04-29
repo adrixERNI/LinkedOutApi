@@ -220,8 +220,8 @@
               "ViewState": "AgIAACAAAAAAAAAAAAAwwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T12:54:37.035Z"
+              "EditorCaption": ""
             },
-            {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "UserController.cs",
@@ -231,9 +231,10 @@
               "RelativeToolTip": "Controllers\\UserControllerFolder\\UserController.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAcwEMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:26:58.64Z"
+              "WhenOpened": "2025-04-27T12:26:58.64Z",
+              "EditorCaption": ""
+              "EditorCaption": ""
             },
-            {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "TopicDTO.cs",
@@ -243,47 +244,49 @@
               "RelativeToolTip": "DTOs\\Shared\\TopicDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T06:16:10.101Z"
+              "WhenOpened": "2025-04-27T06:16:10.101Z",
+              "EditorCaption": ""
+              "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Repositories\\UserRepository\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository\\IUserRepository.cs",
               "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Repositories\\UserRepository\\IUserRepository.cs",
               "RelativeToolTip": "Repositories\\UserRepository\\IUserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
               "WhenOpened": "2025-04-27T12:33:42Z"
+              "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "IBatchRepository.cs",
               "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Interfaces\\Admin\\IBatchRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\Admin\\IBatchRepository.cs",
               "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Interfaces\\Admin\\IBatchRepository.cs",
               "RelativeToolTip": "Interfaces\\Admin\\IBatchRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "WhenOpened": "2025-04-27T12:33:09.497Z"
+              "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "TopicController.cs",
               "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Controllers\\Common\\TopicController.cs",
               "RelativeDocumentMoniker": "Controllers\\Common\\TopicController.cs",
               "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Controllers\\Common\\TopicController.cs",
               "RelativeToolTip": "Controllers\\Common\\TopicController.cs",
               "ViewState": "AgIAAEYAAAAAAAAAAAAiwFAAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T06:47:03.811Z"
+              "WhenOpened": "2025-04-28T09:25:56.566Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "TopicProfiles.cs",
               "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Profiles\\TopicProfiles.cs",
               "RelativeDocumentMoniker": "Profiles\\TopicProfiles.cs",
@@ -342,29 +345,31 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "RelativeToolTip": "Profiles\\TopicProfiles.cs",
+              "DocumentIndex": 17,
               "Title": "ITopicRepository.cs",
               "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Interfaces\\Common\\ITopicRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\Common\\ITopicRepository.cs",
               "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Interfaces\\Common\\ITopicRepository.cs",
               "RelativeToolTip": "Interfaces\\Common\\ITopicRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T05:35:03.398Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "Title": "TopicSkillDTO.cs",
+              "WhenOpened": "2025-04-27T05:35:03.398Z",
+              "EditorCaption": ""
+              "RelativeDocumentMoniker": "DTOs\\Shared\\TopicSkillDTO.cs",
+              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\DTOs\\Shared\\TopicSkillDTO.cs",
+              "RelativeToolTip": "DTOs\\Shared\\TopicSkillDTO.cs",
+              "DocumentIndex": 13,
               "Title": "TopicSkill.cs",
               "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Entities\\TopicSkill.cs",
               "RelativeDocumentMoniker": "Entities\\TopicSkill.cs",
               "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Entities\\TopicSkill.cs",
               "RelativeToolTip": "Entities\\TopicSkill.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T05:55:24.038Z"
-            },
+          "DockedWidth": 200,
+              "WhenOpened": "2025-04-27T05:55:24.038Z",
+              "EditorCaption": ""
+          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 17,
@@ -375,11 +380,12 @@
               "RelativeToolTip": "Interfaces\\Common\\ITopicService.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T06:13:30.234Z"
-            },
+              "WhenOpened": "2025-04-27T06:13:30.234Z",
+              "EditorCaption": ""
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
+              "DocumentIndex": 12,
               "Title": "Topic.cs",
               "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Entities\\Topic.cs",
               "RelativeDocumentMoniker": "Entities\\Topic.cs",
@@ -397,9 +403,10 @@
               "RelativeDocumentMoniker": "Repositories\\Common\\TopicRepository.cs",
               "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\LinkedOutApi\\Repositories\\Common\\TopicRepository.cs",
               "RelativeToolTip": "Repositories\\Common\\TopicRepository.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwDsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T05:56:07.125Z"
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwDsAAAAJAAAAAAAAAA==",
+              "WhenOpened": "2025-04-27T05:55:24.038Z"
+              "WhenOpened": "2025-04-27T05:56:07.125Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -411,7 +418,32 @@
               "RelativeToolTip": "Services\\Shared\\TopicService.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAYwDEAAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T06:33:11.584Z"
+              "WhenOpened": "2025-04-27T06:33:11.584Z",
+              "EditorCaption": ""
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ITopicService.cs",
+              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Common\\ITopicService.cs",
+              "RelativeDocumentMoniker": "Interfaces\\Common\\ITopicService.cs",
+              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Interfaces\\Common\\ITopicService.cs",
+              "RelativeToolTip": "Interfaces\\Common\\ITopicService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T06:13:30.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TopicRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\Common\\TopicRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Common\\TopicRepository.cs",
+              "ToolTip": "C:\\Users\\Kaz\\source\\capstone\\linkedoutapi\\Repositories\\Common\\TopicRepository.cs",
+              "RelativeToolTip": "Repositories\\Common\\TopicRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T05:56:07.125Z",
+              "EditorCaption": ""
             }
           ]
         }
