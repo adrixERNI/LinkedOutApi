@@ -4,6 +4,7 @@ using LinkedOutApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250428084330_Migration3")]
+    partial class Migration3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,7 +85,7 @@ namespace LinkedOutApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("File")
+                    b.Property<byte[]>("File")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
@@ -219,6 +222,81 @@ namespace LinkedOutApi.Migrations
                             Path = "Path/heyYou",
                             UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
                         });
+                });
+
+            modelBuilder.Entity("LinkedOutApi.Entities.MentorAssessment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid>("BootcamperId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("MentorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("OverallRating")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TopicId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BootcamperId");
+
+                    b.HasIndex("MentorId");
+
+                    b.HasIndex("TopicId");
+
+                    b.ToTable("MentorAssessments");
+                });
+
+            modelBuilder.Entity("LinkedOutApi.Entities.MentorSkillFeedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MentorAssessmentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkillId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MentorAssessmentId");
+
+                    b.HasIndex("SkillId");
+
+                    b.ToTable("MentorSkillFeedbacks");
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Project", b =>
@@ -467,40 +545,6 @@ namespace LinkedOutApi.Migrations
                         });
                 });
 
-            modelBuilder.Entity("LinkedOutApi.Entities.SkillFeedback", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SkillId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TopicAssessmentId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SkillId");
-
-                    b.HasIndex("TopicAssessmentId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("SkillFeedbacks");
-                });
-
             modelBuilder.Entity("LinkedOutApi.Entities.Topic", b =>
                 {
                     b.Property<int>("Id")
@@ -546,67 +590,6 @@ namespace LinkedOutApi.Migrations
                             IsDeleted = false,
                             Name = "Backend Development",
                             UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
-                        });
-                });
-
-            modelBuilder.Entity("LinkedOutApi.Entities.TopicAssessment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<Guid>("BootcamperId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Comments")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("MentorId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("OverallRating")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Tags")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TopicId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BootcamperId");
-
-                    b.HasIndex("MentorId");
-
-                    b.HasIndex("TopicId");
-
-                    b.ToTable("TopicAssessments");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BootcamperId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"),
-                            Comments = "attentive and interested in the topic",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            MentorId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
-                            OverallRating = 3,
-                            Tags = "Needs Support",
-                            TopicId = 1,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -777,75 +760,7 @@ namespace LinkedOutApi.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("LinkedOutApi.Entities.Project", b =>
-                {
-                    b.HasOne("LinkedOutApi.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("LinkedOutApi.Entities.Skill", b =>
-                {
-                    b.HasOne("LinkedOutApi.Entities.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("LinkedOutApi.Entities.SkillFeedback", b =>
-                {
-                    b.HasOne("LinkedOutApi.Entities.Skill", "Skill")
-                        .WithMany()
-                        .HasForeignKey("SkillId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LinkedOutApi.Entities.TopicAssessment", "TopicAssessment")
-                        .WithMany("SkillFeedbacks")
-                        .HasForeignKey("TopicAssessmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LinkedOutApi.Entities.User", "User")
-                        .WithMany("Projects")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Skill");
-
-                    b.Navigation("TopicAssessment");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("LinkedOutApi.Entities.Topic", b =>
-                {
-                    b.HasOne("LinkedOutApi.Entities.Batch", "Batch")
-                        .WithMany("Topics")
-                        .HasForeignKey("BatchId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("LinkedOutApi.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Batch");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("LinkedOutApi.Entities.TopicAssessment", b =>
+            modelBuilder.Entity("LinkedOutApi.Entities.MentorAssessment", b =>
                 {
                     b.HasOne("LinkedOutApi.Entities.User", "Bootcamper")
                         .WithMany()
@@ -870,6 +785,66 @@ namespace LinkedOutApi.Migrations
                     b.Navigation("Mentor");
 
                     b.Navigation("Topic");
+                });
+
+            modelBuilder.Entity("LinkedOutApi.Entities.MentorSkillFeedback", b =>
+                {
+                    b.HasOne("LinkedOutApi.Entities.MentorAssessment", "MentorAssessment")
+                        .WithMany()
+                        .HasForeignKey("MentorAssessmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LinkedOutApi.Entities.Skill", "Skill")
+                        .WithMany()
+                        .HasForeignKey("SkillId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MentorAssessment");
+
+                    b.Navigation("Skill");
+                });
+
+            modelBuilder.Entity("LinkedOutApi.Entities.Project", b =>
+                {
+                    b.HasOne("LinkedOutApi.Entities.User", "User")
+                        .WithMany("Projects")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("LinkedOutApi.Entities.Skill", b =>
+                {
+                    b.HasOne("LinkedOutApi.Entities.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("LinkedOutApi.Entities.Topic", b =>
+                {
+                    b.HasOne("LinkedOutApi.Entities.Batch", "Batch")
+                        .WithMany("Topics")
+                        .HasForeignKey("BatchId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("LinkedOutApi.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Batch");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.TopicSkill", b =>
@@ -935,11 +910,6 @@ namespace LinkedOutApi.Migrations
             modelBuilder.Entity("LinkedOutApi.Entities.Topic", b =>
                 {
                     b.Navigation("TopicSkill");
-                });
-
-            modelBuilder.Entity("LinkedOutApi.Entities.TopicAssessment", b =>
-                {
-                    b.Navigation("SkillFeedbacks");
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>
