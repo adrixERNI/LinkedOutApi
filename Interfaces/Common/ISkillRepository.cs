@@ -1,4 +1,5 @@
 using System;
+using LinkedOutApi.DTOs.Skills;
 using LinkedOutApi.Entities;
 
 namespace LinkedOutApi.Interfaces.Common;
@@ -15,6 +16,7 @@ public interface ISkillRepository
 
 Task<Skill> DeleteSelfSkillAsync(int id);
 
-      Task<Certification> UpdateCertificationAsync(int id, CertificationUpdateDTO cert);
+Task<Skill> UpdateSelfSkillAsync(int id, SelfSkillUpdateDTO skill);
+
 
 }

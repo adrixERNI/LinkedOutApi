@@ -30,6 +30,7 @@
   <ItemGroup>
     <Folder Include="Controllers\Mentor\" />
     <Folder Include="Controllers\SelfSkill\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

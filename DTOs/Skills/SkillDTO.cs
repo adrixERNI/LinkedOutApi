@@ -20,3 +20,8 @@ public class SelfSkillAddDTO{
     public string Name {get; set;}
      public int CategoryId{get; set;}
 }
+
+public class SelfSkillUpdateDTO{
+    public string Name{get; set;}
+    
+}

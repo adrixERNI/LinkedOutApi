@@ -1,14 +1,10 @@
-﻿using LinkedOutApi.Entities;
-
-namespace LinkedOutApi.Entities
+namespace LinkedOutApi.DTOs.CV
 {
-    public class CV
+    public class GetCV
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string File { get; set; }
-        public bool IsDeleted { get; set; }
         public Guid UserId { get; set; }
-        public User? User { get; set; }
     }
 }

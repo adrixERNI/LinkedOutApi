@@ -16,10 +16,10 @@ namespace LinkedOutApi.Services.Shared
             _mapper = mapper;
         }
 
-        public async Task<TopicReadDTO> CreateTopicWithSkillAsync(TopicAddDTO topicAddDTO, List<int> skillIds)
+        public async Task<TopicReadDTO> CreateTopicWithSkillAsync(TopicAddRequestDTO topicAddDTO)
         {
             var mappedTopic = _mapper.Map<Topic>(topicAddDTO);
-            var topic = await _repository.CreateTopicWithSkillAsync(mappedTopic, skillIds);
+            var topic = await _repository.CreateTopicWithSkillAsync(mappedTopic, topicAddDTO.SkillIds);
             var mappedReadTopic = _mapper.Map<TopicReadDTO>(topic);
             return mappedReadTopic;
         }
@@ -44,10 +44,10 @@ namespace LinkedOutApi.Services.Shared
             return mappedTopic;
         }
 
-        public async Task<TopicReadDTO> UpdateTopicAsync(int id, TopicAddDTO topicAddDTO, List<int> skillIds)
+        public async Task<TopicReadDTO> UpdateTopicAsync(int id, TopicAddRequestDTO topicAddDTO)
         {
             var mappedTopic = _mapper.Map<Topic>(topicAddDTO);
-            var updatedTopic = await _repository.UpdateTopicAndSkillAsync(id, mappedTopic, skillIds);
+            var updatedTopic = await _repository.UpdateTopicAndSkillAsync(id, mappedTopic, topicAddDTO.SkillIds);
             var mappedUpdated = _mapper.Map<TopicReadDTO>(updatedTopic);
             return mappedUpdated;
         }

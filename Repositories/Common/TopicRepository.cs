@@ -59,7 +59,9 @@ namespace LinkedOutApi.Repositories.Common
         public async Task<Topic> GetTopicByIdAsync(int id)
         {
             var topic = await _context.Topics
-                .Include(t => t.TopicSkill)
+                .Include(t => t.TopicSkill).ThenInclude(ts => ts.Skill)
+                .Include(t => t.Batch)
+                .Include(t => t.User)
                 .FirstOrDefaultAsync(t => t.Id == id && t.IsDeleted == false);
 
             if (topic == null)
@@ -73,7 +75,7 @@ namespace LinkedOutApi.Repositories.Common
         public async Task<ICollection<Topic>> GetTopicsAsync()
         {
             var topics = await _context.Topics
-                .Include(t => t.TopicSkill)
+                .Include(t => t.TopicSkill).ThenInclude(ts => ts.Skill)
                 .Where(t => t.IsDeleted == false).ToListAsync();
             return topics;
         }
@@ -82,6 +84,8 @@ namespace LinkedOutApi.Repositories.Common
         {
             var existingTopic = await _context.Topics
                 .Include(t => t.TopicSkill)
+                .Include(t => t.Batch)
+                .Include(t => t.User)
                 .FirstOrDefaultAsync(t => t.Id == id);
 
             if (existingTopic == null)

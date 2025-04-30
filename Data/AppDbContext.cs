@@ -22,8 +22,8 @@ namespace LinkedOutApi.Data
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<TopicSkill> TopicSkills { get; set; }
-        public DbSet<MentorAssessment> MentorAssessments { get; set; }
-        public DbSet<MentorSkillFeedback> MentorSkillFeedbacks { get; set; }
+        public DbSet<TopicAssessment> TopicAssessments { get; set; }
+        public DbSet<SkillFeedback> SkillFeedbacks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,13 +43,13 @@ namespace LinkedOutApi.Data
                 .HasForeignKey(t => t.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<MentorAssessment>()
+            modelBuilder.Entity<TopicAssessment>()
                 .HasOne(ma => ma.Mentor)
                 .WithMany()
                 .HasForeignKey(ma => ma.MentorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<MentorAssessment>()
+            modelBuilder.Entity<TopicAssessment>()
                 .HasOne(ma => ma.Bootcamper)
                 .WithMany()
                 .HasForeignKey(ma => ma.BootcamperId)
@@ -65,6 +65,18 @@ namespace LinkedOutApi.Data
                 .HasOne(c => c.Skill)
                 .WithMany()
                 .HasForeignKey(c => c.SkillId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Project>()
+                .HasOne(p => p.User)
+                .WithMany(u => u.Projects)
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+            modelBuilder.Entity<CV>()
+                .HasOne(c => c.User)
+                .WithMany(u => u.CVs)
+                .HasForeignKey(c => c.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
                 
             modelBuilder.Entity<User>(r =>
@@ -208,7 +220,35 @@ namespace LinkedOutApi.Data
                 );
             });
 
-           
+            modelBuilder.Entity<Project> (r =>
+            {
+                r.HasData(
+                    new Project { Id = 1,
+                    Title = "Project 1", 
+                    Description = "Description of Project 1", 
+                    UserId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4"),
+                    TechUsed = "HTML, CSS, JavaScript"
+                    }
+                );
+            });
+            modelBuilder.Entity<TopicAssessment>(r =>
+            {
+                r.HasData(
+                    new TopicAssessment
+                    {
+                        Id = 1,
+                        MentorId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
+                        BootcamperId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4"),
+                        TopicId = 1,
+                        OverallRating = 3,
+                        Comments = "attentive and interested in the topic",
+                        Tags = "Needs Support"
+
+                    }
+                );
+            });
+
+
         }
     }
 }

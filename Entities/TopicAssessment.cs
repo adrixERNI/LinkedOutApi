@@ -1,6 +1,6 @@
 ﻿namespace LinkedOutApi.Entities
 {
-    public class MentorAssessment
+    public class TopicAssessment
     {
         // bootcamp_trainee_assessment
         public int Id { get; set; }
@@ -18,5 +18,7 @@
         public User Mentor { get; set; }
         public User Bootcamper { get; set; }
         public Topic Topic { get; set; }
+
+        public ICollection<SkillFeedback> SkillFeedbacks { get; set; }
     }
 }

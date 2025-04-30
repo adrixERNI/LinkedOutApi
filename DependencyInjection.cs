@@ -14,6 +14,9 @@ using LinkedOutApi.Repositories.Common;
 using LinkedOutApi.Interfaces.Cert;
 using LinkedOutApi.Repositories.Cert;
 using LinkedOutApi.Profiles.UserProfile;
+using LinkedOutApi.Services.Shared;
+using LinkedOutApi.Entities;
+using LinkedOutApi.Repositories;
 
 namespace LinkedOutApi
 {
@@ -23,13 +26,16 @@ namespace LinkedOutApi
         {
 
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IMentorAssessmentRepository, MentorAssessmentRepository>();
+            services.AddScoped<ITopicAssessmentRepository, TopicAssessmentRepository>();
             services.AddScoped<IUserSkillRepository, UserSkillRepository>();
             services.AddScoped<IBatchRepository, BatchRepository>();
             services.AddScoped<ITopicRepository, TopicRepository>();
             services.AddScoped<ISkillRepository, SkillRepository>();
+            services.AddScoped<ISkillFeedbackRepository, SkillFeedbackRepository>();
             services.AddScoped<ICertificationRepository, CertificationRepository>();
-            
+            services.AddScoped<ITopicRepository, TopicRepository>();
+            services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<ICVRepository, CVRepository>();
 
             return services;
 
@@ -39,6 +45,7 @@ namespace LinkedOutApi
         {
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IBatchService, BatchService>();
+            services.AddScoped<ITopicService, TopicService>();
 
             return services;
         }
@@ -49,6 +56,7 @@ namespace LinkedOutApi
             services.AddAutoMapper(typeof(MappingProfile).Assembly);
             services.AddAutoMapper(typeof(SkillProfile).Assembly);
             services.AddAutoMapper(typeof(CertificationProfile).Assembly);
+            services.AddAutoMapper(typeof(TopicProfiles).Assembly);
 
             return services;
         }
