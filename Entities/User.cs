@@ -24,7 +24,8 @@ public class User
     public int? RoleId { get; set; }
 
 
-    public ICollection<UserSkill> UserSkills { get; set; }
+    public virtual ICollection<UserSkill> UserSkills { get; set; }
+    public virtual ICollection<Certification> Certifications {get; set;}
 
     public Batch Batch { get; set; }
     public Role Role { get; set; }

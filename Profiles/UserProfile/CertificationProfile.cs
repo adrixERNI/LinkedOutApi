@@ -12,5 +12,6 @@ public class CertificationProfile:Profile
         CreateMap<Certification,CertificationUpdateDTO>().ReverseMap();
 
         CreateMap<Certification,CertificationResponseDTO>().ReverseMap();
+        
     }
 }

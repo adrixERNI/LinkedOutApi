@@ -46,6 +46,8 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("mentor")]
+     [ProducesResponseType(typeof(SuccessResponseDTO), 200)]
+    [ProducesResponseType(typeof(ErrorResponseDTO), 500)]
     public async Task<IActionResult> GetAllMentor(){
         try{
             var userMentor = await _traineeRepo.GetAllMentorAsync();
@@ -61,6 +63,7 @@ public class UserController : ControllerBase
         }
     }
 
+   
     [HttpPost("/api/admin/batch/{batchId}/add/user")]
     [ProducesResponseType(typeof(SuccessResponseDTO), 200)]
     [ProducesResponseType(typeof(ErrorResponseDTO), 500)]
@@ -83,6 +86,8 @@ public class UserController : ControllerBase
             StatusCode = 500
         });
     }
+
+
 
     [HttpDelete("/api/admin/batch/{batchId}/remove/user")]
     [ProducesResponseType(typeof(SuccessResponseDTO), 200)]

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinkedOutApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250428030316_init")]
+    [Migration("20250430012729_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -746,7 +746,7 @@ namespace LinkedOutApi.Migrations
                         .IsRequired();
 
                     b.HasOne("LinkedOutApi.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Certifications")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -921,6 +921,8 @@ namespace LinkedOutApi.Migrations
 
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>
                 {
+                    b.Navigation("Certifications");
+
                     b.Navigation("UserSkills");
                 });
 #pragma warning restore 612, 618

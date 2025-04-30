@@ -39,6 +39,12 @@ public class CertificationRepository : ICertificationRepository
 
     }
 
+    public async Task<Certification> GetByIdCertificationAsync(int id)
+    {
+        return await _context.Certifications.FindAsync(id);
+            
+    }
+
     public async Task<Certification> UpdateCertificationAsync(int id, CertificationUpdateDTO cert)
     {
         var existingCert = await _context.Certifications.FirstOrDefaultAsync(c => c.Id==id);

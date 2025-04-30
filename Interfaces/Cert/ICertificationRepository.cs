@@ -11,4 +11,6 @@ public interface ICertificationRepository
      Task<Certification> DeleteCertificationAsync (int id);
 
      Task<Certification> UpdateCertificationAsync(int id, CertificationUpdateDTO cert);
+
+     Task<Certification> GetByIdCertificationAsync(int id);
 }

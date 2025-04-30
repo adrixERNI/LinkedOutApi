@@ -1,5 +1,6 @@
 using System;
 using AutoMapper;
+using LinkedOutApi.DTOs.Certifications;
 using LinkedOutApi.DTOs.User.TraineeFolder;
 using LinkedOutApi.DTOs.User.UserFolder;
 using LinkedOutApi.DTOs.User.UserFolder.BatchFolder;
@@ -32,7 +33,16 @@ public class UserTraineeProfile : Profile
                 Status = src.Batch.Status,
                 IsDeleted = src.Batch.IsDeleted
             }))
-            .ReverseMap();  
+            .ForMember(dest => dest.Certification, opt => opt.MapFrom(src => src.Certifications))
+            .ReverseMap();
+
+            CreateMap<User, UserTraineeCertificationDTO>()
+                .ForMember(dest => dest.Certification, opt => opt.MapFrom(src => src.Certifications))
+                .ReverseMap();
+
+            
+            
+            
     }
 
 }

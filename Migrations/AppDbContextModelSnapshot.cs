@@ -743,7 +743,7 @@ namespace LinkedOutApi.Migrations
                         .IsRequired();
 
                     b.HasOne("LinkedOutApi.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Certifications")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -918,6 +918,8 @@ namespace LinkedOutApi.Migrations
 
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>
                 {
+                    b.Navigation("Certifications");
+
                     b.Navigation("UserSkills");
                 });
 #pragma warning restore 612, 618

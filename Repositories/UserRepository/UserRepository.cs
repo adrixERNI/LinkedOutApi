@@ -1,6 +1,5 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-
 using LinkedOutApi.Data;
 using LinkedOutApi.Entities;
 
@@ -22,6 +21,7 @@ public class UserRepository : IUserRepository
                 //.Include(u => u.CV)
                 .Include(u => u.Role)
                 .Where(u=> u.RoleId == 1)
+                .Include(u => u.Certifications)
                 .ToListAsync();
     }
 
@@ -73,5 +73,19 @@ public class UserRepository : IUserRepository
 
         await _context.SaveChangesAsync();
         return true;
+    }
+
+    public async Task<Entities.User> GetByIdTraineeCertificationAsync(Guid id)
+    {
+       return await _context.Users
+        .Include(c => c.Certifications)
+        .FirstOrDefaultAsync(c => c.Id == id);
+    }
+
+    public async Task<Entities.User> GetByIdTraineeAndCertificationAsync(Guid userId, int certificationId)
+    {
+        return await _context.Users
+        .Include(c => c.Certifications)
+        .FirstOrDefaultAsync(u => u.Id == userId && u.Certifications.Any(c => c.Id == certificationId));
     }
 }

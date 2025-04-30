@@ -57,7 +57,7 @@ namespace LinkedOutApi.Data
 
             modelBuilder.Entity<Certification>()
                 .HasOne(c => c.User)
-                .WithMany()
+                .WithMany(u => u.Certifications)
                 .HasForeignKey(c => c.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
