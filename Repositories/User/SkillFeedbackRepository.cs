@@ -5,24 +5,24 @@ using LinkedOutApi.Interfaces.User;
 
 namespace LinkedOutApi.Repositories.User
 {
-    public class MentorSkillFeedbackRepository : IMentorSkillFeedbackRepository
+    public class SkillFeedbackRepository : ISkillFeedbackRepository
     {
         private readonly AppDbContext _context;
 
-        public MentorSkillFeedbackRepository(AppDbContext context)
+        public SkillFeedbackRepository(AppDbContext context)
         {
             _context = context;
         }
-        public async Task<List<MentorSkillFeedback>> AddSkillFeedback(List<MentorSkillFeedback> mentorSkillFeedback)
+        public async Task<List<SkillFeedback>> AddSkillFeedback(List<SkillFeedback> mentorSkillFeedback)
         {
             await _context.AddRangeAsync(mentorSkillFeedback);
             await _context.SaveChangesAsync();
             return mentorSkillFeedback;
         }
 
-        public async Task<MentorSkillFeedback> DeleteSkillFeedback(int id)
+        public async Task<SkillFeedback> DeleteSkillFeedback(int id)
         {
-            var skillFeedback = await _context.MentorSkillFeedbacks.FindAsync(id);
+            var skillFeedback = await _context.SkillFeedbacks.FindAsync(id);
             if (skillFeedback == null)
             {
                 throw new KeyNotFoundException("Id does not exist.");
@@ -32,18 +32,18 @@ namespace LinkedOutApi.Repositories.User
             return skillFeedback;
         }
 
-        public async Task<IEnumerable<MentorSkillFeedback>> GetAllSkillFeedbacks(int id)
+        public async Task<IEnumerable<SkillFeedback>> GetAllSkillFeedbacks(int id)
         {
-            var skillFeedbackList = await _context.MentorSkillFeedbacks
-                .Where(u => u.IsDeleted == false && u.MentorAssessmentId == id)
+            var skillFeedbackList = await _context.SkillFeedbacks
+                .Where(u => u.IsDeleted == false && u.TopicAssessmentId == id)
                 .Include(u => u.Skill)
                 .ToListAsync();
             return skillFeedbackList;
         }
 
-        public async Task<MentorSkillFeedback?> UpdateSkillFeedback(int id, MentorSkillFeedback mentorSkillFeedback)
+        public async Task<SkillFeedback?> UpdateSkillFeedback(int id, SkillFeedback mentorSkillFeedback)
         {
-            var currentSkillFeedback = await _context.MentorSkillFeedbacks.FindAsync(id);
+            var currentSkillFeedback = await _context.SkillFeedbacks.FindAsync(id);
 
             if (currentSkillFeedback == null)
             {

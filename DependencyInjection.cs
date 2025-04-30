@@ -24,12 +24,12 @@ namespace LinkedOutApi
         {
 
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IMentorAssessmentRepository, MentorAssessmentRepository>();
+            services.AddScoped<ITopicAssessmentRepository, TopicAssessmentRepository>();
             services.AddScoped<IUserSkillRepository, UserSkillRepository>();
             services.AddScoped<IBatchRepository, BatchRepository>();
             services.AddScoped<ITopicRepository, TopicRepository>();
             services.AddScoped<ISkillRepository, SkillRepository>();
-            services.AddScoped<IMentorSkillFeedbackRepository, MentorSkillFeedbackRepository>();
+            services.AddScoped<ISkillFeedbackRepository, SkillFeedbackRepository>();
             services.AddScoped<ICertificationRepository, CertificationRepository>();
             services.AddScoped<ITopicRepository, TopicRepository>();
 
