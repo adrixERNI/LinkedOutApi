@@ -3,3 +3,4 @@ C:\Users\Kaz\source\capstone\strctr\LinkedOut.Application\obj\Debug\net9.0\Linke
 C:\Users\Kaz\source\capstone\strctr\LinkedOut.Application\obj\Debug\net9.0\LinkedOut.Application.AssemblyInfoInputs.cache
 C:\Users\Kaz\source\capstone\strctr\LinkedOut.Application\obj\Debug\net9.0\LinkedOut.Application.AssemblyInfo.cs
 C:\Users\Kaz\source\capstone\strctr\LinkedOut.Application\obj\Debug\net9.0\LinkedOut.Application.csproj.CoreCompileInputs.cache
+C:\Users\Kaz\source\capstone\strctr\LinkedOut.Application\obj\Debug\net9.0\LinkedOut.Application.sourcelink.json
