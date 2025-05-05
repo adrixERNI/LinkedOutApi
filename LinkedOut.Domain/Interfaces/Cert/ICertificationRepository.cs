@@ -1,5 +1,4 @@
 using LinkedOutApi.Entities;
-//using LinkedOutApi.
 
 namespace LinkedOutApi.Interfaces.Cert
 {
@@ -9,7 +8,8 @@ namespace LinkedOutApi.Interfaces.Cert
 
         Task<Certification> DeleteCertificationAsync(int id);
 
-        Task<Certification> UpdateCertificationAsync(int id, CertificationUpdateDTO cert);
+        //Task<Certification> UpdateCertificationAsync(int id, CertificationUpdateDTO cert);
+        Task<Certification> UpdateCertificationAsync(int id, Certification cert);
 
         Task<Certification> GetByIdCertificationAsync(int id);
     }

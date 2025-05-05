@@ -1,5 +1,4 @@
 using System;
-using Amazon.S3.Model;
 using LinkedOutApi.DTOs.Certifications;
 using LinkedOutApi.DTOs.User.UserFolder.BatchFolder;
 using LinkedOutApi.DTOs.User.UserFolder.CVFolder;

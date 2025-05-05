@@ -1,8 +1,5 @@
 using LinkedOutApi.DTOs.CV;
 using LinkedOutApi.Entities;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace LinkedOutApi.Profiles
 {

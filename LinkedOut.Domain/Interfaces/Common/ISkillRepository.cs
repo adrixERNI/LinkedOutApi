@@ -1,5 +1,3 @@
-using System;
-using LinkedOutApi.DTOs.Skills;
 using LinkedOutApi.Entities;
 
 namespace LinkedOutApi.Interfaces.Common;
@@ -16,7 +14,8 @@ public interface ISkillRepository
 
 Task<Skill> DeleteSelfSkillAsync(int id);
 
-Task<Skill> UpdateSelfSkillAsync(int id, SelfSkillUpdateDTO skill);
+    //Task<Skill> UpdateSelfSkillAsync(int id, SelfSkillUpdateDTO skill);
+Task<Skill> UpdateSelfSkillAsync(int id, Skill skill);
 
 
 }

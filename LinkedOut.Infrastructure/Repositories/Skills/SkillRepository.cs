@@ -58,7 +58,7 @@ public class SkillRepository : ISkillRepository
         return existingSkill;
     }
 
-    public async Task<Skill> UpdateSelfSkillAsync(int id, SelfSkillUpdateDTO skill)
+    public async Task<Skill> UpdateSelfSkillAsync(int id, Skill skill)
     {
         var existingSelfSkill = await _context.Skills.FirstOrDefaultAsync(s => s.Id == id);
         if(existingSelfSkill == null){

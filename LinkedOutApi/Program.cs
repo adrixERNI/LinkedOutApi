@@ -2,7 +2,7 @@ using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using LinkedOutApi.Extensions;
+//using LinkedOutApi.Extensions;
 using Amazon.S3;
 using Amazon.Runtime;
 using LinkedOutApi.Data;
@@ -18,7 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 Env.Load();
 
 builder.Services.AddHttpClient();
-builder.Services.AddApplicationServices();
+//builder.Services.AddApplicationServices();
 builder.Services.AddRouting(options =>
 {
     options.LowercaseUrls = true;

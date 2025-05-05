@@ -84,7 +84,16 @@ public class CertificationController:ControllerBase
             if(!await _skillRepo.SkillExistingAsync(certUpdateDTO.SkillId)){
                 return NotFound(new {message = "Skill not found"});
             }
-            var cert = await _certRepo.UpdateCertificationAsync(id, certUpdateDTO);
+
+            var mappedCert = new Certification
+            {
+                Name = certUpdateDTO.Name,
+                IssuingOrg = certUpdateDTO.IssuingOrg,
+                Expiration = certUpdateDTO.Expiration,
+                SkillId = certUpdateDTO.SkillId
+            };
+
+            var cert = await _certRepo.UpdateCertificationAsync(id, mappedCert);
             if(cert == null){
                 return NotFound(new {message = "Certification not Found"});
             }

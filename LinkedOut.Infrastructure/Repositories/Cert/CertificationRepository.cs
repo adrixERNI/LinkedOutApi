@@ -56,4 +56,9 @@ public class CertificationRepository : ICertificationRepository
         return existingCert;
 
     }
+
+    public Task<Certification> UpdateCertificationAsync(int id, Certification cert)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -17,7 +17,6 @@ using LinkedOutApi.Profiles.UserProfile;
 using LinkedOutApi.Services.Shared;
 using LinkedOutApi.Entities;
 using LinkedOutApi.Repositories;
-using LinkedOutApi.AuthServices;
 
 namespace LinkedOutApi
 {
