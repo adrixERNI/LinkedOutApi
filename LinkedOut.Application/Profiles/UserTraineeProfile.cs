@@ -39,7 +39,9 @@ public class UserTraineeProfile : Profile
             CreateMap<User, UserTraineeCertificationDTO>()
                 .ForMember(dest => dest.Certification, opt => opt.MapFrom(src => src.Certifications))
                 .ReverseMap();
-
+                
+             CreateMap<User, UserTraineeGetIdCertificationDTO>()
+            .ForMember(dest => dest.Certification, opt => opt.Ignore());
             
             
             

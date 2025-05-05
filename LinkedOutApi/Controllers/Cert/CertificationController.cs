@@ -32,7 +32,14 @@ public class CertificationController:ControllerBase
         _traineeRepo = traineeRepo;
 
     }
-
+    [HttpGet]
+    public async Task<ActionResult<CertificationResponseDTO>> GetAllCertification(){
+        var cert = await _certRepo.GetAllCertificationAsync();
+        var cert_dto = _mapper.Map<List<CertificationResponseDTO>>(cert);
+        return Ok(cert_dto);
+    }
+    
+    
     [HttpPost("trainee")]
     [ProducesResponseType(typeof(SuccessResponseDTO), 201)]
     [ProducesResponseType(typeof(ErrorResponseDTO), 500)]
@@ -79,38 +86,38 @@ public class CertificationController:ControllerBase
     [HttpPut("user/trainee/{id}")]
     [ProducesResponseType(typeof(SuccessResponseDTO), 201)]
     [ProducesResponseType(typeof(ErrorResponseDTO), 500)]
-    public async Task<IActionResult> UpdateCertification([FromRoute] int id, [FromBody] CertificationUpdateDTO certUpdateDTO){
-        try{
-            if(!await _skillRepo.SkillExistingAsync(certUpdateDTO.SkillId)){
-                return NotFound(new {message = "Skill not found"});
+    public async Task<IActionResult> UpdateCertification([FromRoute] int id, [FromBody] CertificationUpdateDTO certUpdateDTO)
+    {
+        try
+        {
+            if (!await _skillRepo.SkillExistingAsync(certUpdateDTO.SkillId))
+            {
+                return NotFound(new { message = "Skill not found" });
             }
 
-            var mappedCert = new Certification
-            {
-                Name = certUpdateDTO.Name,
-                IssuingOrg = certUpdateDTO.IssuingOrg,
-                Expiration = certUpdateDTO.Expiration,
-                SkillId = certUpdateDTO.SkillId
-            };
+            var mappedCert = _mapper.Map<Certification>(certUpdateDTO);
 
             var cert = await _certRepo.UpdateCertificationAsync(id, mappedCert);
-            if(cert == null){
-                return NotFound(new {message = "Certification not Found"});
+            if (cert == null)
+            {
+                return NotFound(new { message = "Certification not Found" });
             }
 
             var responseDto = _mapper.Map<CertificationResponseDTO>(cert);
 
             return Ok(responseDto);
-
-        }catch(Exception ex){
-            return StatusCode(500, new ErrorResponseDTO{
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new ErrorResponseDTO
+            {
                 Message = ex.Message,
                 Success = false,
                 StatusCode = 500
             });
         }
-       
     }
+
 
     [HttpDelete("{id}")]
     [ProducesResponseType(typeof(SuccessResponseDTO), 201)]
@@ -151,16 +158,28 @@ public class CertificationController:ControllerBase
     }
 
     // [HttpGet("trainee/{userId}/certification/{certificationId}")]
-    [HttpGet("trainee/{userId}")]
-    public async Task<IActionResult>GetByUserTraineeAndCertification([FromRoute] Guid userId, [FromQuery] int certificationId){
 
-        
-        var user = await _traineeRepo.GetByIdTraineeAndCertificationAsync(userId,certificationId);
-        if(user == null){
-            return NotFound(new {message = "User/Certification is not found"});
+    [HttpGet("trainee/{userId}")]
+
+    public async Task<IActionResult> GetByUserTraineeAndCertification([FromRoute] Guid userId,[FromQuery] int certificationId)
+    {
+        var user = await _traineeRepo.GetByIdTraineeAndCertificationAsync(userId, certificationId);
+
+        if (user == null)
+        {
+            return NotFound(new { message = "User/Certification not found" });
         }
 
-        var userDto = _mapper.Map<UserTraineeCertificationDTO>(user);
+        var matchedCertification = user.Certifications.FirstOrDefault(c => c.Id == certificationId);
+        if (matchedCertification == null)
+        {
+            return NotFound(new { message = "Certification not found for this user" });
+        }
+
+        var userDto = _mapper.Map<UserTraineeGetIdCertificationDTO>(user);
+
+        userDto.Certification = _mapper.Map<CertificationResponseDTO>(matchedCertification);
+
         return Ok(userDto);
     }
 

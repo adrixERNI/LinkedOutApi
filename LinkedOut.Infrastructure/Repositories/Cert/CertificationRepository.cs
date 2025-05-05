@@ -6,7 +6,6 @@ using LinkedOutApi.Entities;
 using LinkedOutApi.DTOs.Certifications;
 using AutoMapper;
 
-
 namespace LinkedOutApi.Repositories.Cert;
 
 public class CertificationRepository : ICertificationRepository
@@ -20,12 +19,13 @@ public class CertificationRepository : ICertificationRepository
         _mapper = mapper;
    
     }
-    public async Task<Entities.Certification> CreateAsync(Entities.Certification certification)
+    public async Task<Certification> CreateAsync(Certification certification)
     {
         await _context.Certifications.AddAsync(certification);
         await _context.SaveChangesAsync();
         return certification;
     }
+
 
     public async Task<Certification> DeleteCertificationAsync(int id)
     {
@@ -39,26 +39,47 @@ public class CertificationRepository : ICertificationRepository
 
     }
 
+    public async Task<List<Certification>> GetAllCertificationAsync()
+    {
+        return await _context.Certifications.ToListAsync();
+    }
+
     public async Task<Certification> GetByIdCertificationAsync(int id)
     {
         return await _context.Certifications.FindAsync(id);
             
     }
 
-    public async Task<Certification> UpdateCertificationAsync(int id, CertificationUpdateDTO cert)
+    // public async Task<Certification> UpdateCertificationAsync(int id, CertificationUpdateDTO cert)
+    // {
+    //     var existingCert = await _context.Certifications.FirstOrDefaultAsync(c => c.Id==id);
+    //     if(existingCert == null){
+    //         return null;
+    //     }
+    //     _mapper.Map(cert, existingCert);
+    //     await _context.SaveChangesAsync();
+    //     return existingCert;
+
+    // }
+
+    public async Task<Certification> UpdateCertificationAsync(int id, Certification cert)
     {
-        var existingCert = await _context.Certifications.FirstOrDefaultAsync(c => c.Id==id);
-        if(existingCert == null){
-            return null;
+        var existingCert = await _context.Certifications.FirstOrDefaultAsync(c => c.Id == id);
+        if (existingCert == null)
+        {
+            return null; 
         }
-        _mapper.Map(cert, existingCert);
+
+
+        existingCert.Name = cert.Name;
+        existingCert.IssuingOrg = cert.IssuingOrg;
+        existingCert.Expiration = cert.Expiration;
+        existingCert.SkillId = cert.SkillId;
+
+
         await _context.SaveChangesAsync();
+
         return existingCert;
-
     }
 
-    public Task<Certification> UpdateCertificationAsync(int id, Certification cert)
-    {
-        throw new NotImplementedException();
-    }
 }

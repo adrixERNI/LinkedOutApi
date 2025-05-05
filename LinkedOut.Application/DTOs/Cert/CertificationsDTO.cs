@@ -22,11 +22,13 @@ public class CertificationsAddDTO{
     }
 
     public class CertificationResponseDTO
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string IssuingOrg { get; set; }
-    public DateOnly Expiration { get; set; }
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string IssuingOrg { get; set; }
+        public DateOnly Expiration { get; set; }
 
-    public int SkillId { get; set; }
-}
+        public int SkillId { get; set; }
+    }
+
+    

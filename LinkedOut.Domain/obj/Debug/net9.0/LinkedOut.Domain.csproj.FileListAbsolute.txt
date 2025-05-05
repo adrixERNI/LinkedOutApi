@@ -17,3 +17,16 @@ C:\Users\extcrmh\source\capstone\linkedoutapi\LinkedOut.Domain\obj\Debug\net9.0\
 C:\Users\extcrmh\source\capstone\linkedoutapi\LinkedOut.Domain\obj\Debug\net9.0\refint\LinkedOut.Domain.dll
 C:\Users\extcrmh\source\capstone\linkedoutapi\LinkedOut.Domain\obj\Debug\net9.0\LinkedOut.Domain.pdb
 C:\Users\extcrmh\source\capstone\linkedoutapi\LinkedOut.Domain\obj\Debug\net9.0\ref\LinkedOut.Domain.dll
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\bin\Debug\net9.0\LinkedOut.Domain.deps.json
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\bin\Debug\net9.0\LinkedOut.Domain.dll
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\bin\Debug\net9.0\LinkedOut.Domain.pdb
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\obj\Debug\net9.0\LinkedOut.Domain.csproj.AssemblyReference.cache
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\obj\Debug\net9.0\LinkedOut.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\obj\Debug\net9.0\LinkedOut.Domain.AssemblyInfoInputs.cache
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\obj\Debug\net9.0\LinkedOut.Domain.AssemblyInfo.cs
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\obj\Debug\net9.0\LinkedOut.Domain.csproj.CoreCompileInputs.cache
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\obj\Debug\net9.0\LinkedOut.Domain.sourcelink.json
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\obj\Debug\net9.0\LinkedOut.Domain.dll
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\obj\Debug\net9.0\refint\LinkedOut.Domain.dll
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\obj\Debug\net9.0\LinkedOut.Domain.pdb
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Domain\obj\Debug\net9.0\ref\LinkedOut.Domain.dll

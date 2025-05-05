@@ -83,9 +83,18 @@ public class UserRepository : IUserRepository
     }
 
     public async Task<Entities.User> GetByIdTraineeAndCertificationAsync(Guid userId, int certificationId)
-    {
-        return await _context.Users
-        .Include(c => c.Certifications)
+ {
+    var user = await _context.Users
+        .Include(u => u.Certifications)
         .FirstOrDefaultAsync(u => u.Id == userId && u.Certifications.Any(c => c.Id == certificationId));
+
+    if (user == null)
+        return null;
+
+    user.Certifications = user.Certifications
+        .Where(c => c.Id == certificationId)
+        .ToList();
+
+    return user;
     }
 }

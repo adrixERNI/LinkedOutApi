@@ -1,4 +1,5 @@
 using System;
+using System.Reflection.Metadata.Ecma335;
 using AutoMapper;
 using LinkedOutApi.Data;
 using LinkedOutApi.DTOs.Skills;
@@ -18,16 +19,11 @@ public class SkillRepository : ISkillRepository
     }
 
     public async Task<Skill> CreateSelfSkillAsync(Skill skill)
-{
-    if (skill.CategoryId != 3)
     {
-        throw new InvalidOperationException("Needs to be self category (CategoryId must be 3).");
-    }
-
-    await _context.Skills.AddAsync(skill);
-    await _context.SaveChangesAsync();
-    return skill;
-}
+        await _context.Skills.AddAsync(skill);
+        await _context.SaveChangesAsync();
+        return skill;
+        }
 
 
     public async Task<List<Skill>> GetAllSkillAsync()
@@ -49,8 +45,13 @@ public class SkillRepository : ISkillRepository
 
     public async Task<Skill> DeleteSelfSkillAsync(int id)
     {
-       var existingSkill = await _context.Skills.FirstOrDefaultAsync(s => s.Id == id);
+       var existingSkill = await _context.Skills.FirstOrDefaultAsync(s => s.Id == id && s.CategoryId == 3);
         if(existingSkill == null){
+            return null;
+        }
+
+        bool certificationChecker = await _context.Certifications.AnyAsync(c => c.SkillId == id);
+        if(certificationChecker){
             return null;
         }
         _context.Skills.Remove(existingSkill);
@@ -60,14 +61,38 @@ public class SkillRepository : ISkillRepository
 
     public async Task<Skill> UpdateSelfSkillAsync(int id, Skill skill)
     {
-        var existingSelfSkill = await _context.Skills.FirstOrDefaultAsync(s => s.Id == id);
+        var existingSelfSkill = await _context.Skills.FirstOrDefaultAsync(s => s.Id == id && s.CategoryId == 3);
         if(existingSelfSkill == null){
             return null;
         }
 
-       _mapper.Map(skill,existingSelfSkill);
+      existingSelfSkill.Name = skill.Name;
+
        await _context.SaveChangesAsync();
        return existingSelfSkill;
 
+
+        //     var existingCert = await _context.Certifications.FirstOrDefaultAsync(c => c.Id == id);
+        // if (existingCert == null)
+        // {
+        //     return null; 
+        // }
+
+
+        // existingCert.Name = cert.Name;
+        // existingCert.IssuingOrg = cert.IssuingOrg;
+        // existingCert.Expiration = cert.Expiration;
+        // existingCert.SkillId = cert.SkillId;
+
+
+        // await _context.SaveChangesAsync();
+
+        // return existingCert;
+
+    }
+
+    public async Task<Skill> GetByIdSelfSkillAsync(int id)
+    {
+        return await _context.Skills.FindAsync(id);
     }
 }

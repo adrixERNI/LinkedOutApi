@@ -25,6 +25,13 @@ public class UserTraineeCertificationDTO{
     public ICollection<CertificationResponseDTO> Certification {get; set;}
 }
 
+public class UserTraineeGetIdCertificationDTO{
+    public Guid Id {get;set;}
+    public string Name {get; set;}
+    public CertificationResponseDTO Certification {get; set;}
+}
+
+
 
 
 

@@ -17,5 +17,7 @@ Task<Skill> DeleteSelfSkillAsync(int id);
     //Task<Skill> UpdateSelfSkillAsync(int id, SelfSkillUpdateDTO skill);
 Task<Skill> UpdateSelfSkillAsync(int id, Skill skill);
 
+Task<Skill> GetByIdSelfSkillAsync(int id);
+
 
 }

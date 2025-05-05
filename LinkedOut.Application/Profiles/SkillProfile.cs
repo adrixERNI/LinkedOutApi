@@ -11,6 +11,6 @@ public class SkillProfile:Profile
         CreateMap<Skill,SkillDTO>().ReverseMap();
         CreateMap<Skill,SelfSkillDTO>().ReverseMap();
         CreateMap<Skill, SelfSkillAddDTO>().ReverseMap();
-        CreateMap<Skill, SelfSkillUpdateDTO>().ReverseMap();
+        CreateMap<Skill,SelfSkillUpdateDTO>().ReverseMap();
     }
 }

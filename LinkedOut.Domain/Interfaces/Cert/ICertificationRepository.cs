@@ -4,6 +4,7 @@ namespace LinkedOutApi.Interfaces.Cert
 {
     public interface ICertificationRepository
     {
+         Task<List<Certification>> GetAllCertificationAsync();
         Task<Certification> CreateAsync(Certification certification);
 
         Task<Certification> DeleteCertificationAsync(int id);
