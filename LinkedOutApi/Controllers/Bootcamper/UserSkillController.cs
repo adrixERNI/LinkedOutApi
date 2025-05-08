@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using LinkedOutApi.DTOs.User;
 using LinkedOutApi.Entities;
+using LinkedOutApi.Interfaces.Common;
 using LinkedOutApi.Interfaces.User;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,7 @@ namespace LinkedOutApi.Controllers.Bootcamper
     {
         private readonly IUserSkillRepository _userSkillRepository;
         private readonly IMapper _mapper;
+
 
         public UserSkillController(IUserSkillRepository userSkillRepository, IMapper mapper)
         {
@@ -43,6 +45,7 @@ namespace LinkedOutApi.Controllers.Bootcamper
             {
                 return NotFound();
             }
+
             return Ok(removeUserSkill);
         }
 
@@ -66,6 +69,7 @@ namespace LinkedOutApi.Controllers.Bootcamper
             {
                 return NotFound();
             }
+    
             return changedUserSkill;
         }
     }

@@ -18,7 +18,6 @@ namespace LinkedOutApi.Repositories.User
         }
         public async Task<List<UserSkill>> AddUserSkill(List<UserSkill> userSkills)
         {
-
             await _context.UserSkills.AddRangeAsync(userSkills);
             await _context.SaveChangesAsync();
 

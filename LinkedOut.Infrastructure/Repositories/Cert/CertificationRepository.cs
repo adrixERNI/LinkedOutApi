@@ -50,17 +50,6 @@ public class CertificationRepository : ICertificationRepository
             
     }
 
-    // public async Task<Certification> UpdateCertificationAsync(int id, CertificationUpdateDTO cert)
-    // {
-    //     var existingCert = await _context.Certifications.FirstOrDefaultAsync(c => c.Id==id);
-    //     if(existingCert == null){
-    //         return null;
-    //     }
-    //     _mapper.Map(cert, existingCert);
-    //     await _context.SaveChangesAsync();
-    //     return existingCert;
-
-    // }
 
     public async Task<Certification> UpdateCertificationAsync(int id, Certification cert)
     {
