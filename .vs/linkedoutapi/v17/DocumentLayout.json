@@ -1,42 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\",
+  "WorkspaceRootPath": "C:\\Users\\extdaad\\Desktop\\NewCapstone\\LinkedOutApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi\\LinkedOut.API.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\linkedoutapi\\controllers\\cert\\certificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi\\LinkedOut.API.csproj|solutionrelative:linkedoutapi\\controllers\\cert\\certificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\extdaad\\Desktop\\NewCapstone\\LinkedOutApi\\LinkedOut.Infrastructure\\Migrations\\20250508062400_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:LinkedOut.Infrastructure\\Migrations\\20250508062400_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3DD4081-747C-4C38-BC8E-22F700B0D2FC}|LinkedOut.Infrastructure\\LinkedOut.Infrastructure.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\linkedout.infrastructure\\repositories\\skills\\skillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3DD4081-747C-4C38-BC8E-22F700B0D2FC}|LinkedOut.Infrastructure\\LinkedOut.Infrastructure.csproj|solutionrelative:linkedout.infrastructure\\repositories\\skills\\skillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3DD4081-747C-4C38-BC8E-22F700B0D2FC}|LinkedOut.Infrastructure\\LinkedOut.Infrastructure.csproj|c:\\users\\extdaad\\desktop\\newcapstone\\linkedoutapi\\linkedout.infrastructure\\migrations\\20250508054349_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3DD4081-747C-4C38-BC8E-22F700B0D2FC}|LinkedOut.Infrastructure\\LinkedOut.Infrastructure.csproj|solutionrelative:linkedout.infrastructure\\migrations\\20250508054349_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49C2C485-B126-4E10-9D2D-E6E0C26E36AD}|LinkedOut.Application\\LinkedOut.Application.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\linkedout.application\\dtos\\skills\\skilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49C2C485-B126-4E10-9D2D-E6E0C26E36AD}|LinkedOut.Application\\LinkedOut.Application.csproj|solutionrelative:linkedout.application\\dtos\\skills\\skilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3DD4081-747C-4C38-BC8E-22F700B0D2FC}|LinkedOut.Infrastructure\\LinkedOut.Infrastructure.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\linkedout.infrastructure\\repositories\\cert\\certificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3DD4081-747C-4C38-BC8E-22F700B0D2FC}|LinkedOut.Infrastructure\\LinkedOut.Infrastructure.csproj|solutionrelative:linkedout.infrastructure\\repositories\\cert\\certificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49C2C485-B126-4E10-9D2D-E6E0C26E36AD}|LinkedOut.Application\\LinkedOut.Application.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\linkedout.application\\profiles\\cvmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49C2C485-B126-4E10-9D2D-E6E0C26E36AD}|LinkedOut.Application\\LinkedOut.Application.csproj|solutionrelative:linkedout.application\\profiles\\cvmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49C2C485-B126-4E10-9D2D-E6E0C26E36AD}|LinkedOut.Application\\LinkedOut.Application.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\linkedout.application\\dtos\\user\\userfolder\\usertraineedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49C2C485-B126-4E10-9D2D-E6E0C26E36AD}|LinkedOut.Application\\LinkedOut.Application.csproj|solutionrelative:linkedout.application\\dtos\\user\\userfolder\\usertraineedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi\\LinkedOut.API.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\linkedoutapi\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi\\LinkedOut.API.csproj|solutionrelative:linkedoutapi\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi\\LinkedOut.API.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\linkedoutapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi\\LinkedOut.API.csproj|c:\\users\\extdaad\\desktop\\newcapstone\\linkedoutapi\\linkedoutapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FED573E-A5C9-0872-4598-A8C0AF4E045A}|LinkedOutApi\\LinkedOut.API.csproj|solutionrelative:linkedoutapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49C2C485-B126-4E10-9D2D-E6E0C26E36AD}|LinkedOut.Application\\LinkedOut.Application.csproj|c:\\users\\extcrmh\\source\\capstone\\linkedoutapi\\linkedout.application\\services\\admin\\batchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49C2C485-B126-4E10-9D2D-E6E0C26E36AD}|LinkedOut.Application\\LinkedOut.Application.csproj|solutionrelative:linkedout.application\\services\\admin\\batchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3DD4081-747C-4C38-BC8E-22F700B0D2FC}|LinkedOut.Infrastructure\\LinkedOut.Infrastructure.csproj|c:\\users\\extdaad\\desktop\\newcapstone\\linkedoutapi\\linkedout.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3DD4081-747C-4C38-BC8E-22F700B0D2FC}|LinkedOut.Infrastructure\\LinkedOut.Infrastructure.csproj|solutionrelative:linkedout.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,19 +26,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
@@ -78,127 +54,67 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250508062400_initial.cs",
+              "DocumentMoniker": "C:\\Users\\extdaad\\Desktop\\NewCapstone\\LinkedOutApi\\LinkedOut.Infrastructure\\Migrations\\20250508062400_initial.cs",
+              "RelativeDocumentMoniker": "LinkedOut.Infrastructure\\Migrations\\20250508062400_initial.cs",
+              "ToolTip": "C:\\Users\\extdaad\\Desktop\\NewCapstone\\LinkedOutApi\\LinkedOut.Infrastructure\\Migrations\\20250508062400_initial.cs",
+              "RelativeToolTip": "LinkedOut.Infrastructure\\Migrations\\20250508062400_initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T06:24:00.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20250508054349_data.cs",
+              "DocumentMoniker": "C:\\Users\\extdaad\\Desktop\\NewCapstone\\LinkedOutApi\\LinkedOut.Infrastructure\\Migrations\\20250508054349_data.cs",
+              "RelativeDocumentMoniker": "LinkedOut.Infrastructure\\Migrations\\20250508054349_data.cs",
+              "ToolTip": "C:\\Users\\extdaad\\Desktop\\NewCapstone\\LinkedOutApi\\LinkedOut.Infrastructure\\Migrations\\20250508054349_data.cs",
+              "RelativeToolTip": "LinkedOut.Infrastructure\\Migrations\\20250508054349_data.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T05:43:49.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\extdaad\\Desktop\\NewCapstone\\LinkedOutApi\\LinkedOutApi\\Program.cs",
+              "RelativeDocumentMoniker": "LinkedOutApi\\Program.cs",
+              "ToolTip": "C:\\Users\\extdaad\\Desktop\\NewCapstone\\LinkedOutApi\\LinkedOutApi\\Program.cs",
+              "RelativeToolTip": "LinkedOutApi\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwCEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T05:37:53.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\extdaad\\Desktop\\NewCapstone\\LinkedOutApi\\LinkedOut.Infrastructure\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "LinkedOut.Infrastructure\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\extdaad\\Desktop\\NewCapstone\\LinkedOutApi\\LinkedOut.Infrastructure\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "LinkedOut.Infrastructure\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAEUBAAAAAAAAAAAtwCgBAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T01:55:20.653Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CertificationController.cs",
-              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOutApi\\Controllers\\Cert\\CertificationController.cs",
-              "RelativeDocumentMoniker": "LinkedOutApi\\Controllers\\Cert\\CertificationController.cs",
-              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOutApi\\Controllers\\Cert\\CertificationController.cs",
-              "RelativeToolTip": "LinkedOutApi\\Controllers\\Cert\\CertificationController.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAYwFkAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T02:09:03.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SkillDTO.cs",
-              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Application\\DTOs\\Skills\\SkillDTO.cs",
-              "RelativeDocumentMoniker": "LinkedOut.Application\\DTOs\\Skills\\SkillDTO.cs",
-              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Application\\DTOs\\Skills\\SkillDTO.cs",
-              "RelativeToolTip": "LinkedOut.Application\\DTOs\\Skills\\SkillDTO.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T02:08:30.567Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SkillRepository.cs",
-              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Infrastructure\\Repositories\\Skills\\SkillRepository.cs",
-              "RelativeDocumentMoniker": "LinkedOut.Infrastructure\\Repositories\\Skills\\SkillRepository.cs",
-              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Infrastructure\\Repositories\\Skills\\SkillRepository.cs",
-              "RelativeToolTip": "LinkedOut.Infrastructure\\Repositories\\Skills\\SkillRepository.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowDoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T02:07:31.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CertificationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Infrastructure\\Repositories\\Cert\\CertificationRepository.cs",
-              "RelativeDocumentMoniker": "LinkedOut.Infrastructure\\Repositories\\Cert\\CertificationRepository.cs",
-              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Infrastructure\\Repositories\\Cert\\CertificationRepository.cs",
-              "RelativeToolTip": "LinkedOut.Infrastructure\\Repositories\\Cert\\CertificationRepository.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAkwAsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T02:07:19.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CVMapper.cs",
-              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Application\\Profiles\\CVMapper.cs",
-              "RelativeDocumentMoniker": "LinkedOut.Application\\Profiles\\CVMapper.cs",
-              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Application\\Profiles\\CVMapper.cs",
-              "RelativeToolTip": "LinkedOut.Application\\Profiles\\CVMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T02:05:50.848Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserTraineeDTO.cs",
-              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Application\\DTOs\\User\\UserFolder\\UserTraineeDTO.cs",
-              "RelativeDocumentMoniker": "LinkedOut.Application\\DTOs\\User\\UserFolder\\UserTraineeDTO.cs",
-              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Application\\DTOs\\User\\UserFolder\\UserTraineeDTO.cs",
-              "RelativeToolTip": "LinkedOut.Application\\DTOs\\User\\UserFolder\\UserTraineeDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T02:05:37.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOutApi\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "LinkedOutApi\\DependencyInjection.cs",
-              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOutApi\\DependencyInjection.cs",
-              "RelativeToolTip": "LinkedOutApi\\DependencyInjection.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAowBIAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T01:58:41.721Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BatchService.cs",
-              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Application\\Services\\Admin\\BatchService.cs",
-              "RelativeDocumentMoniker": "LinkedOut.Application\\Services\\Admin\\BatchService.cs",
-              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOut.Application\\Services\\Admin\\BatchService.cs",
-              "RelativeToolTip": "LinkedOut.Application\\Services\\Admin\\BatchService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T01:53:04.971Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOutApi\\Program.cs",
-              "RelativeDocumentMoniker": "LinkedOutApi\\Program.cs",
-              "ToolTip": "C:\\Users\\extcrmh\\source\\capstone\\linkedoutapi\\LinkedOutApi\\Program.cs",
-              "RelativeToolTip": "LinkedOutApi\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T01:51:04.675Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         },

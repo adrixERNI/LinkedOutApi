@@ -40,3 +40,5 @@ C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Infrastructure\obj\D
 C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Infrastructure\obj\Debug\net9.0\refint\LinkedOut.Infrastructure.dll
 C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Infrastructure\obj\Debug\net9.0\LinkedOut.Infrastructure.pdb
 C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Infrastructure\obj\Debug\net9.0\ref\LinkedOut.Infrastructure.dll
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Infrastructure\bin\Debug\net9.0\LinkedOut.Infrastructure.runtimeconfig.json
+C:\Users\extdaad\Desktop\NewCapstone\LinkedOutApi\LinkedOut.Infrastructure\obj\Debug\net9.0\LinkedOut.Infrastructure.genruntimeconfig.cache

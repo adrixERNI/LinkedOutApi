@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LinkedOut.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab3609d73ecd596acbcd0b8cd4a142462d391203")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba85080371371a70c1ba4be1c73cee539227cab5")]
 [assembly: System.Reflection.AssemblyProductAttribute("LinkedOut.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LinkedOut.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
