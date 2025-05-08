@@ -78,7 +78,15 @@ namespace LinkedOutApi.Data
                 .WithMany(u => u.CVs)
                 .HasForeignKey(c => c.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
-                
+
+            modelBuilder.Entity<TopicSkill>()
+                .HasIndex(ts => new { ts.TopicId, ts.SkillId })
+                .IsUnique();
+
+            modelBuilder.Entity<UserSkill>()
+                .HasIndex(us => new { us.UserId, us.SkillId })
+                .IsUnique();
+
             modelBuilder.Entity<User>(r =>
             {
                 r.HasData(
@@ -247,6 +255,95 @@ namespace LinkedOutApi.Data
                     }
                 );
             });
+
+            modelBuilder.Entity<Admin>(r =>
+            {
+                r.HasData(
+                    new Admin
+                    {
+                        Id = Guid.Parse("a1b2c3d4-e5f6-7890-ab12-cdef34567890"),
+                        Username = "adminuser",
+                        Password = "securepassword"
+                    }
+                );
+            });
+
+            modelBuilder.Entity<Certification>(r =>
+            {
+                r.HasData(
+                    new Certification
+                    {
+                        Id = 1,
+                        Name = "Azure Fundamentals",
+                        IssuingOrg = "Microsoft",
+                        Expiration = new DateOnly(2026, 12, 31),
+                        UserId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4"), // match to existing User
+                        SkillId = 14,
+                        IsDeleted = false
+                    }
+                );
+            });
+
+            modelBuilder.Entity<TopicAssessment>(r =>
+            {
+                r.HasData(
+                    new TopicAssessment
+                    {
+                        Id = 2,
+                        MentorId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa6"), // Must match seeded User with Mentor role
+                        BootcamperId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4"), // Must match Bootcamper User
+                        TopicId = 1, // Must match a seeded Topic
+                        OverallRating = 5,
+                        Comments = "Strong understanding of core concepts.",
+                        Tags = "html,css,basics",
+                        CreatedAt = new DateTime(2024,2,2),
+                        UpdatedAt = new DateTime(2025,5,8),
+                        IsDeleted = false
+                    }
+                );
+            });
+
+            modelBuilder.Entity<SkillFeedback>(r =>
+            {
+                r.HasData(
+                    new SkillFeedback
+                    {
+                        Id = 1,
+                        Rating = 4,
+                        TopicAssessmentId = 1, // Ensure this exists in TopicAssessment seed
+                        SkillId = 1,           // Ensure this exists in Skill seed
+                        UserId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4"), // Existing User
+                        IsDeleted = false
+                    }
+                );
+            });
+
+            modelBuilder.Entity<TopicSkill>(r =>
+            {
+                r.HasData(
+                    new TopicSkill
+                    {
+                        Id = 1,
+                        TopicId = 1, // Ensure this matches a seeded Topic
+                        SkillId = 1, // Ensure this matches a seeded Skill
+                        IsDeleted = false
+                    }
+                );
+            });
+            modelBuilder.Entity<UserSkill>(r =>
+            {
+                r.HasData(
+                    new UserSkill
+                    {
+                        Id = 1,
+                        UserId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa4"), // Existing User
+                        SkillId = 1,  // Existing Skill
+                        Rating = 3,
+                        IsDeleted = false
+                    }
+                );
+            });
+
 
 
         }

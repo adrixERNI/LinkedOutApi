@@ -4,16 +4,19 @@ using LinkedOutApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace LinkedOutApi.Migrations
+namespace LinkedOut.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250508054349_data")]
+    partial class data
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,6 +42,14 @@ namespace LinkedOutApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Admins");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("a1b2c3d4-e5f6-7890-ab12-cdef34567890"),
+                            Password = "securepassword",
+                            Username = "adminuser"
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Batch", b =>
@@ -182,6 +193,18 @@ namespace LinkedOutApi.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Certifications");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Expiration = new DateOnly(2026, 12, 31),
+                            IsDeleted = false,
+                            IssuingOrg = "Microsoft",
+                            Name = "Azure Fundamentals",
+                            SkillId = 14,
+                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Image", b =>
@@ -501,6 +524,17 @@ namespace LinkedOutApi.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("SkillFeedbacks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsDeleted = false,
+                            Rating = 4,
+                            SkillId = 1,
+                            TopicAssessmentId = 1,
+                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.Topic", b =>
@@ -609,6 +643,19 @@ namespace LinkedOutApi.Migrations
                             Tags = "Needs Support",
                             TopicId = 1,
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BootcamperId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"),
+                            Comments = "Strong understanding of core concepts.",
+                            CreatedAt = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            MentorId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"),
+                            OverallRating = 5,
+                            Tags = "html,css,basics",
+                            TopicId = 1,
+                            UpdatedAt = new DateTime(2025, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -633,9 +680,19 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("SkillId");
 
-                    b.HasIndex("TopicId");
+                    b.HasIndex("TopicId", "SkillId")
+                        .IsUnique();
 
                     b.ToTable("TopicSkills");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsDeleted = false,
+                            SkillId = 1,
+                            TopicId = 1
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.User", b =>
@@ -744,9 +801,20 @@ namespace LinkedOutApi.Migrations
 
                     b.HasIndex("SkillId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId", "SkillId")
+                        .IsUnique();
 
                     b.ToTable("UserSkills");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsDeleted = false,
+                            Rating = 3,
+                            SkillId = 1,
+                            UserId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4")
+                        });
                 });
 
             modelBuilder.Entity("LinkedOutApi.Entities.CV", b =>

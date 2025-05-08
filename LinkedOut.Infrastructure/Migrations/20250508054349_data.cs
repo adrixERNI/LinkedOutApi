@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace LinkedOutApi.Migrations
+namespace LinkedOut.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class data : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -374,6 +374,11 @@ namespace LinkedOutApi.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Admins",
+                columns: new[] { "Id", "Password", "Username" },
+                values: new object[] { new Guid("a1b2c3d4-e5f6-7890-ab12-cdef34567890"), "securepassword", "adminuser" });
+
+            migrationBuilder.InsertData(
                 table: "Batches",
                 columns: new[] { "Id", "IsDeleted", "Name", "Status" },
                 values: new object[] { 1, false, "Backend & Cloud 2025", "In Progress" });
@@ -444,6 +449,11 @@ namespace LinkedOutApi.Migrations
                 values: new object[] { 1, "Pdf", false, "My Resume", new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") });
 
             migrationBuilder.InsertData(
+                table: "Certifications",
+                columns: new[] { "Id", "Expiration", "IsDeleted", "IssuingOrg", "Name", "SkillId", "UserId" },
+                values: new object[] { 1, new DateOnly(2026, 12, 31), false, "Microsoft", "Azure Fundamentals", 14, new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") });
+
+            migrationBuilder.InsertData(
                 table: "Images",
                 columns: new[] { "Id", "IsDeleted", "Name", "Path", "UserId" },
                 values: new object[] { 1, false, "Image1", "Path/heyYou", new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") });
@@ -463,9 +473,28 @@ namespace LinkedOutApi.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "UserSkills",
+                columns: new[] { "Id", "IsDeleted", "Rating", "SkillId", "UserId" },
+                values: new object[] { 1, false, 3, 1, new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") });
+
+            migrationBuilder.InsertData(
                 table: "TopicAssessments",
                 columns: new[] { "Id", "BootcamperId", "Comments", "CreatedAt", "IsDeleted", "MentorId", "OverallRating", "Tags", "TopicId", "UpdatedAt" },
-                values: new object[] { 1, new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"), "attentive and interested in the topic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"), 3, "Needs Support", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                values: new object[,]
+                {
+                    { 1, new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"), "attentive and interested in the topic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"), 3, "Needs Support", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4"), "Strong understanding of core concepts.", new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6"), 5, "html,css,basics", 1, new DateTime(2025, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                });
+
+            migrationBuilder.InsertData(
+                table: "TopicSkills",
+                columns: new[] { "Id", "IsDeleted", "SkillId", "TopicId" },
+                values: new object[] { 1, false, 1, 1 });
+
+            migrationBuilder.InsertData(
+                table: "SkillFeedbacks",
+                columns: new[] { "Id", "IsDeleted", "Rating", "SkillId", "TopicAssessmentId", "UserId" },
+                values: new object[] { 1, false, 4, 1, 1, new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa4") });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Certifications_SkillId",
@@ -543,9 +572,10 @@ namespace LinkedOutApi.Migrations
                 column: "SkillId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TopicSkills_TopicId",
+                name: "IX_TopicSkills_TopicId_SkillId",
                 table: "TopicSkills",
-                column: "TopicId");
+                columns: new[] { "TopicId", "SkillId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_BatchId",
@@ -569,9 +599,10 @@ namespace LinkedOutApi.Migrations
                 column: "SkillId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserSkills_UserId",
+                name: "IX_UserSkills_UserId_SkillId",
                 table: "UserSkills",
-                column: "UserId");
+                columns: new[] { "UserId", "SkillId" },
+                unique: true);
         }
 
         /// <inheritdoc />
